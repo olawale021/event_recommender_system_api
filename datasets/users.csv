@@ -1,0 +1,12 @@
+id,first_name,last_name,email,password,contact_number,date_of_birth,profile_picture,role,address_line1,city,state,postal_code,country,preferred_categories,preferred_payment_method,created_at,updated_at,organizerName,username
+1,Olawale,Steppa,olawale@gmail.com,$2a$10$d4aJf6SUcA8t5XQkm//5QuO3A6Udlfo2.oGOq3AiGsYurKrhiSSLm,,,,ATTENDEE,,"London, UK",,,United Kingdom,,,2024-09-26 00:41:45,2024-09-26 00:41:45,,BIGSTEPPP
+2,,,olawale1@gmail.com,$2a$10$fRPjUjC.2co9hlzCruwTNeqVVsu/S/LBGPWf1Qu78pvtMtvU1XNhe,,,,ORGANIZER,,,,,,,,2024-09-27 04:50:33,2024-09-27 04:50:33,,
+3,Big,Steppa,step123@step.com,$2a$10$d6wJiftHgd1VMgyDdww38uSmtBGOvHuRbv7FFFIR.BR4WlWf5ZdUS,,,,ATTENDEE,,"Coventry, UK",,,,,,,,,steppa
+4,john,doe,john@email.com,$2a$10$4k1oxg91eVptP8tj0V/.qexxYAN.DYClwjigmJXG..qyITY6cfdWq,,,,ATTENDEE,,"Liverpool, UK",,,,,,,,,johndoe
+5,Vic,Lu,vic1@gmail.com,$2a$10$lmwuRAA1ta2O1oPexS5ULedDN3F7uFv0YfGDKpwifpPqiSfVpAPjG,,,,ATTENDEE,,"Coventry, UK",,,,,,,,,LaVu
+6,Alex,Aliko,alex@email.com,$2a$10$v9YmAsOzTYrX8hEPHVl7i.SPU9LfTDOiJLAhxjFUuebzM5d6PlgIe,,,,ATTENDEE,,Birmingham,,,,,,,,,alex123
+7,tems,steppp,tem1@test.com,$2a$10$XNM7Ce7sxHOMgxSZRe3PDetfxuOTMAlFXdDvVFnelG2k1xl5yo0X6,,,,ATTENDEE,,Manchester,,,,,,,,,temszzz
+8,MAIN,ZZZZ,te2@test.com,$2a$10$fCRVfslTr5M58bhB2m1dBuqh.sugw2F5aRyfNxmrvJRuvVoP1qgoG,,,,ATTENDEE,,"Birmingham, UK",,,,,,,,,MAIN
+9,BIG,STEPPP,t@test.com,$2a$10$eJ.rm9iy2yFm4n0JTDfsU.A1gJ0ByAo09jfd06iUDdd8Atv.DOPnO,,,,ATTENDEE,,"London, UK",,,,,,,,,IDAN
+10,MR,BIG,big@email.com,$2a$10$nNtNeSRGUYWiE/GTBnVK0OHp.1aKk6wRQJCTEB23FXTVDK8yQi6Vy,,,,ATTENDEE,,"Warwick, UK",,,,,,,,,MRBIG
+11,Big,Vic,vic11@gmail.com,$2a$10$G7GScS.Bb.lweJ90rqYYL.0efDbIL/WXb1CAnR2RObqF2H.pRGATa,,,,ATTENDEE,,"Coventry, UK",,,,,,,,,Bigvic

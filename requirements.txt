@@ -1,0 +1,12 @@
+pip
+wheel
+Jinja2
+setuptools
+packaging
+typing_extensions
+numpy
+pandas
+Flask
+scipy
+joblib
+tensorflow

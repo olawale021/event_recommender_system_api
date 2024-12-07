@@ -1,0 +1,722 @@
+@relation user_behaviour-weka.filters.unsupervised.attribute.ReplaceMissingValues
+
+@attribute id numeric
+@attribute user_id numeric
+@attribute event_id numeric
+@attribute interaction_type {browse,view,purchase,add_to_wishlist,remove_from_wishlist,view_friend_profile}
+@attribute interaction_timestamp numeric
+@attribute event_category_id numeric
+@attribute event_location {'Manchester, UK','Edinburgh, UK','Leeds, UK','Birmingham, UK','London, UK','Bristol, UK','Warwick, UK','Coventry, UK','Northampton, UK','Liverpool, UK','Newcastle, UK','Leicester, UK','Derby, UK','Wolverhampton, UK','Nottingham, UK','Bradford, UK','Leicester, Uk','Norwich, UK','Southampton, UK','Leeds, Uk'}
+@attribute session_length numeric
+@attribute friend_id numeric
+@attribute date_filter {within-1-month,this-week,within-2-weeks,today,this-month}
+@attribute price_filter {between-30-and-100,under-30,over-100,free}
+@attribute location_filter {Birmingham,London,'Birmingham, UK',Bristol,'Bristol, UK','London, UK',Nightlife,london,AI,Liverpool,business,'Northampton, UK','Warwick, UK',Coventry,LiverpooL,Wol,'Newcastle, UK',b,manch}
+@attribute preferred_category1 numeric
+@attribute preferred_category2 numeric
+@attribute preferred_category3 numeric
+@attribute ticket_id numeric
+@attribute user_location {Birmingham,Coventry,London,Manchester,Liverpool,'Warwick, UK','London, UK','Coventry, UK','Birmingham, UK','Liverpool, UK'}
+
+@data
+1,6,38.512136,browse,1729837236655,6.978155,'Birmingham, UK',6.283,5.537037,within-1-month,between-30-and-100,London,7,1,2,57.8125,Birmingham
+2,6,38.512136,browse,1729837238503,6.978155,'Birmingham, UK',1.803,5.537037,within-1-month,between-30-and-100,London,2,7,1,57.8125,Birmingham
+3,6,10,view,1729837244743,1,'Manchester, UK',6.19,5.537037,within-1-month,under-30,London,1,2,7,57.8125,Birmingham
+4,6,10,purchase,1729837246122,1,'Manchester, UK',8.113403,5.537037,within-1-month,under-30,London,1,7,2,1,Birmingham
+5,6,38.512136,browse,1729837252051,6.978155,'Birmingham, UK',2.885,5.537037,within-1-month,under-30,London,1,2,7,57.8125,Birmingham
+6,6,10,add_to_wishlist,1729837252064,1,'Manchester, UK',8.113403,5.537037,within-1-month,under-30,London,1,7,2,57.8125,Birmingham
+7,6,38.512136,browse,1729837255339,6.978155,'Birmingham, UK',3.181,5.537037,within-1-month,under-30,London,1,7,2,57.8125,Birmingham
+8,6,9,add_to_wishlist,1729837255350,4,'Edinburgh, UK',8.113403,5.537037,within-1-month,under-30,London,2,1,7,57.8125,Birmingham
+9,6,38.512136,browse,1729837256590,6.978155,'Birmingham, UK',1.131,5.537037,within-1-month,under-30,London,7,1,2,57.8125,Birmingham
+10,6,9,remove_from_wishlist,1729837256612,4,'Edinburgh, UK',8.113403,5.537037,within-1-month,under-30,London,2,1,7,57.8125,Birmingham
+11,6,38.512136,browse,1729837261678,6.978155,'Birmingham, UK',4.965,5.537037,within-1-month,under-30,London,2,1,7,57.8125,Birmingham
+12,3,38.512136,view_friend_profile,1729838499252,6.978155,'Birmingham, UK',8.113403,1,within-1-month,under-30,London,1,6,7,57.8125,Coventry
+13,3,9,add_to_wishlist,1729838514793,4,'Edinburgh, UK',8.113403,5.537037,within-1-month,under-30,London,6,7,1,57.8125,Coventry
+14,3,38.512136,browse,1729838514809,6.978155,'Birmingham, UK',2.516,5.537037,within-1-month,under-30,London,1,7,6,57.8125,Coventry
+15,3,38.512136,browse,1729838515962,6.978155,'Birmingham, UK',1.08,5.537037,within-1-month,under-30,London,6,7,1,57.8125,Coventry
+16,3,9,view,1729838518974,4,'Edinburgh, UK',2.937,5.537037,within-1-month,under-30,London,1,6,7,57.8125,Coventry
+17,3,9,purchase,1729838519826,4,'Edinburgh, UK',8.113403,5.537037,within-1-month,under-30,London,7,6,1,2,Coventry
+18,3,11,view,1729838534159,6,'Leeds, UK',6.228,5.537037,within-1-month,under-30,London,7,1,6,57.8125,Coventry
+19,3,38.512136,browse,1729838540351,6.978155,'Birmingham, UK',6.126,5.537037,within-1-month,under-30,London,6,7,1,57.8125,Coventry
+20,3,38.512136,browse,1729838601362,6.978155,'Birmingham, UK',4.577,5.537037,this-week,between-30-and-100,London,6,1,7,57.8125,Coventry
+21,3,38.512136,browse,1729838606005,6.978155,'Birmingham, UK',4.566,5.537037,within-2-weeks,between-30-and-100,London,6,1,7,57.8125,Coventry
+22,3,38.512136,browse,1729838607920,6.978155,'Birmingham, UK',1.861,5.537037,within-2-weeks,under-30,London,1,6,7,57.8125,Coventry
+23,3,38.512136,browse,1729838609519,6.978155,'Birmingham, UK',1.55,5.537037,within-2-weeks,over-100,London,1,7,6,57.8125,Coventry
+24,3,38.512136,browse,1729838611698,6.978155,'Birmingham, UK',2.13,5.537037,within-1-month,over-100,London,6,7,1,57.8125,Coventry
+25,3,38.512136,browse,1729838614277,6.978155,'Birmingham, UK',2.515,5.537037,within-1-month,over-100,London,6,7,1,57.8125,Coventry
+26,3,38.512136,browse,1729838620983,6.978155,'Birmingham, UK',6.644,5.537037,within-2-weeks,over-100,London,1,7,6,57.8125,Coventry
+27,3,38.512136,browse,1729838624030,6.978155,'Birmingham, UK',3,5.537037,within-2-weeks,over-100,London,7,6,1,57.8125,Coventry
+28,5,38.512136,browse,1729838639500,6.978155,'Birmingham, UK',2.647,5.537037,within-1-month,under-30,London,4,3,5,57.8125,Coventry
+29,5,38.512136,browse,1729838640497,6.978155,'Birmingham, UK',0.959,5.537037,within-1-month,under-30,London,4,3,5,57.8125,Coventry
+30,5,13,view,1729838643402,7,'Birmingham, UK',2.859,5.537037,within-1-month,under-30,London,5,4,3,57.8125,Coventry
+31,5,13,purchase,1729838644535,7,'Birmingham, UK',8.113403,5.537037,within-1-month,under-30,London,3,5,4,3,Coventry
+32,5,38.512136,browse,1729838651952,6.978155,'Birmingham, UK',2.172,5.537037,within-1-month,under-30,London,4,3,5,57.8125,Coventry
+33,5,11,add_to_wishlist,1729838651962,6,'Leeds, UK',8.113403,5.537037,within-1-month,under-30,London,4,3,5,57.8125,Coventry
+34,5,38.512136,browse,1729838654393,6.978155,'Birmingham, UK',2.334,5.537037,within-1-month,under-30,London,5,3,4,57.8125,Coventry
+35,5,11,remove_from_wishlist,1729838654417,6,'Leeds, UK',8.113403,5.537037,within-1-month,under-30,London,5,4,3,57.8125,Coventry
+36,5,38.512136,browse,1729838657433,6.978155,'Birmingham, UK',2.925,5.537037,within-1-month,under-30,London,5,3,4,57.8125,Coventry
+37,5,9,add_to_wishlist,1729838657443,4,'Edinburgh, UK',8.113403,5.537037,within-1-month,under-30,London,4,5,3,57.8125,Coventry
+38,5,38.512136,browse,1729838658687,6.978155,'Birmingham, UK',1.144,5.537037,within-1-month,under-30,London,4,5,3,57.8125,Coventry
+39,5,9,remove_from_wishlist,1729838658698,4,'Edinburgh, UK',8.113403,5.537037,within-1-month,under-30,London,5,3,4,57.8125,Coventry
+40,5,38.512136,browse,1729838661000,6.978155,'Birmingham, UK',2.207,5.537037,within-2-weeks,under-30,London,5,3,4,57.8125,Coventry
+41,5,38.512136,browse,1729838663189,6.978155,'Birmingham, UK',2.144,5.537037,within-2-weeks,over-100,London,4,5,3,57.8125,Coventry
+42,5,38.512136,browse,1729838666097,6.978155,'Birmingham, UK',2.86,5.537037,within-2-weeks,over-100,London,5,3,4,57.8125,Coventry
+43,5,38.512136,browse,1729838666672,6.978155,'Birmingham, UK',0.521,5.537037,within-2-weeks,over-100,London,3,4,5,57.8125,Coventry
+44,5,38.512136,browse,1729838670946,6.978155,'Birmingham, UK',4.189,5.537037,within-1-month,under-30,London,4,3,5,57.8125,Coventry
+45,5,38.512136,browse,1729838673451,6.978155,'Birmingham, UK',2.466,5.537037,within-1-month,under-30,London,4,3,5,57.8125,Coventry
+46,5,13,add_to_wishlist,1729838673463,7,'Birmingham, UK',8.113403,5.537037,within-1-month,under-30,London,3,5,4,57.8125,Coventry
+47,5,38.512136,browse,1729838676687,6.978155,'Birmingham, UK',3.136,5.537037,within-1-month,under-30,London,3,4,5,57.8125,Coventry
+48,1,38.512136,view_friend_profile,1729838703452,6.978155,'Birmingham, UK',8.113403,6,within-1-month,under-30,London,1,6,4,57.8125,London
+49,5,38.512136,browse,1729838897998,6.978155,'Birmingham, UK',11.709,5.537037,within-1-month,under-30,London,5,4,3,57.8125,Coventry
+50,5,38.512136,view_friend_profile,1729839327327,6.978155,'Birmingham, UK',8.113403,1,within-1-month,under-30,London,3,4,5,57.8125,Coventry
+51,8,38.512136,browse,1729840922992,6.978155,'Birmingham, UK',1.476,5.537037,within-1-month,under-30,London,1,6,2,57.8125,Birmingham
+52,8,7,view,1729840928411,1,'London, UK',5.391,5.537037,within-1-month,under-30,London,6,2,1,57.8125,Birmingham
+53,8,38.512136,browse,1729840930640,6.978155,'Birmingham, UK',2.13,5.537037,within-1-month,under-30,London,2,1,6,57.8125,Birmingham
+54,8,11,view,1729840936083,6,'Leeds, UK',5.396,5.537037,within-1-month,under-30,London,2,1,6,57.8125,Birmingham
+55,8,11,purchase,1729840937094,6,'Leeds, UK',8.113403,5.537037,within-1-month,under-30,London,1,2,6,21,Birmingham
+56,8,38.512136,browse,1729840947506,6.978155,'Birmingham, UK',2.796,5.537037,within-1-month,under-30,London,6,1,2,57.8125,Birmingham
+57,8,11,add_to_wishlist,1729840947520,6,'Leeds, UK',8.113403,5.537037,within-1-month,under-30,London,2,6,1,57.8125,Birmingham
+58,8,38.512136,browse,1729840949453,6.978155,'Birmingham, UK',1.837,5.537037,within-1-month,under-30,London,6,2,1,57.8125,Birmingham
+59,8,38.512136,browse,1729840951536,6.978155,'Birmingham, UK',2.023,5.537037,within-1-month,under-30,London,6,1,2,57.8125,Birmingham
+60,8,13,add_to_wishlist,1729840951547,7,'Birmingham, UK',8.113403,5.537037,within-1-month,under-30,London,6,2,1,57.8125,Birmingham
+61,8,38.512136,browse,1729840953585,6.978155,'Birmingham, UK',1.934,5.537037,within-1-month,under-30,London,2,6,1,57.8125,Birmingham
+62,8,38.512136,browse,1729840954616,6.978155,'Birmingham, UK',0.968,5.537037,within-1-month,under-30,London,2,6,1,57.8125,Birmingham
+63,8,13,remove_from_wishlist,1729840954630,7,'Birmingham, UK',8.113403,5.537037,within-1-month,under-30,London,1,6,2,57.8125,Birmingham
+64,8,38.512136,browse,1729840957472,6.978155,'Birmingham, UK',2.774,5.537037,within-1-month,under-30,London,1,2,6,57.8125,Birmingham
+65,8,7,add_to_wishlist,1729840957483,1,'London, UK',8.113403,5.537037,within-1-month,under-30,London,1,6,2,57.8125,Birmingham
+66,8,38.512136,browse,1729840964688,6.978155,'Birmingham, UK',7.116,5.537037,within-1-month,under-30,London,1,6,2,57.8125,Birmingham
+67,8,38.512136,browse,1729840968293,6.978155,'Birmingham, UK',3.5,5.537037,within-1-month,under-30,London,1,2,6,57.8125,Birmingham
+68,8,38.512136,browse,1729840974365,6.978155,'Birmingham, UK',6.009,5.537037,within-1-month,between-30-and-100,London,6,2,1,57.8125,Birmingham
+69,8,38.512136,browse,1729840976814,6.978155,'Birmingham, UK',2.402,5.537037,today,between-30-and-100,London,6,1,2,57.8125,Birmingham
+70,8,38.512136,browse,1729840980504,6.978155,'Birmingham, UK',3.658,5.537037,this-week,between-30-and-100,London,1,6,2,57.8125,Birmingham
+71,8,38.512136,browse,1729840983020,6.978155,'Birmingham, UK',2.474,5.537037,within-2-weeks,between-30-and-100,London,1,6,2,57.8125,Birmingham
+72,8,38.512136,browse,1729840984901,6.978155,'Birmingham, UK',1.835,5.537037,within-2-weeks,between-30-and-100,London,6,2,1,57.8125,Birmingham
+73,8,38.512136,browse,1729840988037,6.978155,'Birmingham, UK',3.044,5.537037,within-1-month,under-30,London,6,2,1,57.8125,Birmingham
+74,6,11,view,1729841269874,6,'Leeds, UK',3.642,5.537037,within-1-month,under-30,London,7,2,6,57.8125,Birmingham
+75,6,10,view,1729841272214,1,'Manchester, UK',1.279,5.537037,within-1-month,under-30,London,6,2,7,57.8125,Birmingham
+76,6,8,view,1729841275818,1,'Bristol, UK',1.51,5.537037,within-1-month,under-30,London,2,6,7,57.8125,Birmingham
+77,6,38.512136,browse,1729841396089,6.978155,'Birmingham, UK',3.579,5.537037,within-1-month,under-30,London,6,7,2,57.8125,Birmingham
+78,6,38.512136,browse,1729841397940,6.978155,'Birmingham, UK',1.78,5.537037,within-1-month,between-30-and-100,London,7,2,6,57.8125,Birmingham
+79,6,38.512136,browse,1729841407156,6.978155,'Birmingham, UK',1.457,5.537037,within-1-month,under-30,London,7,2,6,57.8125,Birmingham
+80,6,38.512136,browse,1729841409065,6.978155,'Birmingham, UK',1.804,5.537037,this-month,under-30,London,7,2,6,57.8125,Birmingham
+81,6,7,view,1729841417418,1,'London, UK',6.23,5.537037,within-1-month,under-30,London,7,6,2,57.8125,Birmingham
+82,6,7,purchase,1729841418451,1,'London, UK',8.113403,5.537037,within-1-month,under-30,London,2,6,7,23,Birmingham
+83,6,38.512136,view_friend_profile,1729841431391,6.978155,'Birmingham, UK',8.113403,1,within-1-month,under-30,London,7,2,6,57.8125,Birmingham
+84,6,7,view,1729857610762,1,'London, UK',3.624,5.537037,within-1-month,under-30,London,2,7,6,57.8125,Birmingham
+85,6,7,purchase,1729857611926,1,'London, UK',8.113403,5.537037,within-1-month,under-30,London,6,2,7,24,Birmingham
+86,9,38.512136,browse,1729876558933,6.978155,'Birmingham, UK',5.528,5.537037,within-1-month,under-30,London,1,2,7,57.8125,London
+87,9,7,view,1729876566563,1,'London, UK',4.78,5.537037,within-1-month,under-30,London,7,1,2,57.8125,London
+88,6,9,add_to_wishlist,1729877444307,4,'Edinburgh, UK',8.113403,5.537037,within-1-month,under-30,London,2,7,6,57.8125,Birmingham
+89,6,38.512136,browse,1729877449050,6.978155,'Birmingham, UK',4.644,5.537037,within-1-month,under-30,London,6,7,2,57.8125,Birmingham
+90,6,38.512136,browse,1729877451780,6.978155,'Birmingham, UK',2.616,5.537037,this-week,under-30,London,2,7,6,57.8125,Birmingham
+91,6,38.512136,browse,1729877927015,6.978155,'Birmingham, UK',32.719,5.537037,within-1-month,under-30,Birmingham,2,6,7,57.8125,Birmingham
+92,6,38.512136,browse,1729879088597,6.978155,'Birmingham, UK',6.546,5.537037,within-1-month,under-30,London,2,7,6,57.8125,Birmingham
+93,6,38.512136,browse,1729879131423,6.978155,'Birmingham, UK',42.759,5.537037,within-1-month,under-30,London,6,2,7,57.8125,Birmingham
+94,6,38.512136,browse,1729879258211,6.978155,'Birmingham, UK',126.684,5.537037,within-1-month,under-30,London,6,2,7,57.8125,Birmingham
+95,6,38.512136,browse,1729879262344,6.978155,'Birmingham, UK',4.066,5.537037,within-1-month,under-30,London,6,7,2,57.8125,Birmingham
+96,6,38.512136,browse,1729879281712,6.978155,'Birmingham, UK',19.231,5.537037,within-1-month,under-30,Birmingham,2,6,7,57.8125,Birmingham
+97,6,38.512136,browse,1729879851910,6.978155,'Birmingham, UK',6.293,5.537037,within-1-month,under-30,Birmingham,6,2,7,57.8125,Birmingham
+98,6,38.512136,browse,1729879882923,6.978155,'Birmingham, UK',30.911,5.537037,within-1-month,under-30,Birmingham,2,7,6,57.8125,Birmingham
+99,6,38.512136,browse,1729879963895,6.978155,'Birmingham, UK',4.86,5.537037,within-1-month,under-30,Birmingham,2,7,6,57.8125,Birmingham
+100,6,38.512136,browse,1729879987881,6.978155,'Birmingham, UK',23.929,5.537037,within-1-month,under-30,Birmingham,2,7,6,57.8125,Birmingham
+101,6,38.512136,browse,1729881444697,6.978155,'Birmingham, UK',10.927,5.537037,this-month,under-30,Birmingham,7,2,6,57.8125,Birmingham
+102,6,38.512136,browse,1729881533439,6.978155,'Birmingham, UK',68.348,5.537037,within-1-month,under-30,Birmingham,2,7,6,57.8125,Birmingham
+103,6,38.512136,browse,1729881555816,6.978155,'Birmingham, UK',22.283,5.537037,within-1-month,under-30,'Birmingham, UK',7,2,6,57.8125,Birmingham
+104,6,38.512136,browse,1729881583200,6.978155,'Birmingham, UK',5.559,5.537037,within-1-month,under-30,Birmingham,2,6,7,57.8125,Birmingham
+105,6,38.512136,browse,1729881911979,6.978155,'Birmingham, UK',328.64,5.537037,within-1-month,under-30,'Birmingham, UK',6,7,2,57.8125,Birmingham
+106,6,38.512136,browse,1729881925042,6.978155,'Birmingham, UK',12.941,5.537037,within-1-month,under-30,London,6,2,7,57.8125,Birmingham
+107,6,38.512136,browse,1729881936540,6.978155,'Birmingham, UK',11.42,5.537037,within-1-month,under-30,London,2,6,7,57.8125,Birmingham
+108,6,38.512136,browse,1729881948844,6.978155,'Birmingham, UK',12.253,5.537037,within-1-month,under-30,Birmingham,7,2,6,57.8125,Birmingham
+109,6,38.512136,browse,1729881962397,6.978155,'Birmingham, UK',6.613,5.537037,within-1-month,under-30,London,2,6,7,57.8125,Birmingham
+110,6,38.512136,browse,1729881974809,6.978155,'Birmingham, UK',12.315,5.537037,within-1-month,under-30,London,6,7,2,57.8125,Birmingham
+111,6,38.512136,browse,1729882169376,6.978155,'Birmingham, UK',9.888,5.537037,within-1-month,under-30,Bristol,7,2,6,57.8125,Birmingham
+112,6,38.512136,browse,1729882175985,6.978155,'Birmingham, UK',6.532,5.537037,within-1-month,under-30,'Bristol, UK',7,2,6,57.8125,Birmingham
+113,1,38.512136,browse,1729882339135,6.978155,'Birmingham, UK',5.176,5.537037,within-1-month,under-30,London,7,1,6,57.8125,London
+114,1,38.512136,browse,1729882352518,6.978155,'Birmingham, UK',13.335,5.537037,within-1-month,under-30,London,1,7,6,57.8125,London
+115,1,38.512136,browse,1729882357369,6.978155,'Birmingham, UK',4.777,5.537037,within-1-month,under-30,London,6,7,1,57.8125,London
+116,1,38.512136,browse,1729882366054,6.978155,'Birmingham, UK',8.605,5.537037,within-1-month,under-30,'London, UK',7,1,6,57.8125,London
+117,6,38.512136,browse,1729883197196,6.978155,'Birmingham, UK',4.135,5.537037,within-1-month,under-30,London,6,2,7,57.8125,Birmingham
+118,6,38.512136,browse,1729883234177,6.978155,'Birmingham, UK',4.406,5.537037,within-1-month,under-30,London,6,7,2,57.8125,Birmingham
+119,6,38.512136,browse,1729883430131,6.978155,'Birmingham, UK',195.858,5.537037,within-1-month,under-30,Nightlife,7,2,6,57.8125,Birmingham
+120,6,38.512136,browse,1729883451428,6.978155,'Birmingham, UK',21.183,5.537037,within-1-month,between-30-and-100,London,2,7,6,57.8125,Birmingham
+121,6,38.512136,browse,1729883456375,6.978155,'Birmingham, UK',4.829,5.537037,within-1-month,over-100,London,2,7,6,57.8125,Birmingham
+122,6,38.512136,browse,1729883459717,6.978155,'Birmingham, UK',3.241,5.537037,within-1-month,free,London,6,7,2,57.8125,Birmingham
+123,6,38.512136,browse,1729883466827,6.978155,'Birmingham, UK',7.033,5.537037,within-1-month,free,London,2,6,7,57.8125,Birmingham
+124,6,38.512136,browse,1729883527529,6.978155,'Birmingham, UK',5.992,5.537037,within-1-month,under-30,london,2,6,7,57.8125,Birmingham
+125,6,38.512136,browse,1729883653473,6.978155,'Birmingham, UK',4.013,5.537037,within-1-month,under-30,London,2,6,7,57.8125,Birmingham
+126,2,20,view,1729886223507,10,'London, UK',3.933,5.537037,within-1-month,under-30,London,4.583095,5.047278,5.267908,57.8125,Birmingham
+127,2,20,view,1729886233061,10,'London, UK',2.052,5.537037,within-1-month,under-30,London,4.583095,5.047278,5.267908,57.8125,Birmingham
+128,3,38.512136,browse,1729886255660,6.978155,'Birmingham, UK',4.074,5.537037,within-1-month,under-30,London,6,1,7,57.8125,Coventry
+129,3,17,view,1729886259984,15,'Warwick, UK',2.793,5.537037,within-1-month,under-30,London,6,1,7,57.8125,Coventry
+130,3,14,view,1729886271534,3,'Birmingham, UK',2.66,5.537037,within-1-month,under-30,London,6,7,1,57.8125,Coventry
+131,3,16,view,1729886277427,4,'Coventry, UK',3.467,5.537037,within-1-month,under-30,London,7,6,1,57.8125,Coventry
+132,8,7,view,1729886489896,1,'London, UK',9.073,5.537037,within-1-month,under-30,London,1,2,6,57.8125,Birmingham
+133,8,15,view,1729887232397,2,'Northampton, UK',3.793,5.537037,within-1-month,under-30,London,1,2,6,57.8125,Birmingham
+134,8,16,view,1729887239314,4,'Coventry, UK',2.531,5.537037,within-1-month,under-30,London,6,1,2,57.8125,Birmingham
+135,8,38.512136,browse,1729887245122,6.978155,'Birmingham, UK',5.707,5.537037,within-1-month,over-100,London,2,1,6,57.8125,Birmingham
+136,8,38.512136,browse,1729887249796,6.978155,'Birmingham, UK',4.561,5.537037,within-1-month,over-100,London,6,2,1,57.8125,Birmingham
+137,8,38.512136,browse,1729887254425,6.978155,'Birmingham, UK',2.703,5.537037,within-1-month,under-30,London,1,6,2,57.8125,Birmingham
+138,8,20,view,1729887258278,10,'London, UK',2.008,5.537037,within-1-month,under-30,London,1,2,6,57.8125,Birmingham
+139,8,38.512136,browse,1729887261291,6.978155,'Birmingham, UK',2.944,5.537037,within-1-month,under-30,London,1,2,6,57.8125,Birmingham
+140,8,20,add_to_wishlist,1729887262516,10,'London, UK',8.113403,5.537037,within-1-month,under-30,London,2,6,1,57.8125,Birmingham
+141,8,11,view,1729887271119,6,'Leeds, UK',4.593,5.537037,within-1-month,under-30,London,1,2,6,57.8125,Birmingham
+142,8,11,purchase,1729887272098,6,'Leeds, UK',8.113403,5.537037,within-1-month,under-30,London,6,1,2,25,Birmingham
+143,6,38.512136,view_friend_profile,1729887348832,6.978155,'Birmingham, UK',8.113403,1,within-1-month,under-30,London,6,2,7,57.8125,Birmingham
+144,7,38.512136,view_friend_profile,1729887410223,6.978155,'Birmingham, UK',8.113403,6,within-1-month,under-30,London,1,7,4,57.8125,Manchester
+145,7,7,add_to_wishlist,1729887415042,1,'London, UK',8.113403,5.537037,within-1-month,under-30,London,7,4,1,57.8125,Manchester
+146,7,13,view,1729887421292,7,'Birmingham, UK',2.133,5.537037,within-1-month,under-30,London,1,7,4,57.8125,Manchester
+147,7,13,purchase,1729887422265,7,'Birmingham, UK',8.113403,5.537037,within-1-month,under-30,London,1,7,4,26,Manchester
+148,6,38.512136,view_friend_profile,1729887566649,6.978155,'Birmingham, UK',8.113403,3,within-1-month,under-30,London,2,7,6,57.8125,Birmingham
+149,6,21,view,1729887590828,12,'Coventry, UK',4.011,5.537037,within-1-month,under-30,London,2,7,6,57.8125,Birmingham
+150,6,21,add_to_wishlist,1729887598046,12,'Coventry, UK',8.113403,5.537037,within-1-month,under-30,London,2,7,6,57.8125,Birmingham
+151,6,13,view,1729887627875,7,'Birmingham, UK',2.447,5.537037,within-1-month,under-30,London,7,2,6,57.8125,Birmingham
+152,6,13,purchase,1729887628681,7,'Birmingham, UK',8.113403,5.537037,within-1-month,under-30,London,7,2,6,27,Birmingham
+153,6,17,view,1729887808420,15,'Warwick, UK',7.896,5.537037,within-1-month,under-30,London,7,2,6,57.8125,Birmingham
+154,5,38.512136,browse,1729941109190,6.978155,'Birmingham, UK',7.142,5.537037,within-1-month,under-30,AI,3,5,4,57.8125,Coventry
+155,5,38.512136,browse,1729941115271,6.978155,'Birmingham, UK',5.966,5.537037,within-1-month,under-30,London,3,5,4,57.8125,Coventry
+156,5,17,add_to_wishlist,1729941117092,15,'Warwick, UK',8.113403,5.537037,within-1-month,under-30,London,4,3,5,57.8125,Coventry
+157,5,11,view,1729941123386,6,'Leeds, UK',3.557,5.537037,within-1-month,under-30,London,3,4,5,57.8125,Coventry
+158,5,14,add_to_wishlist,1729941127966,3,'Birmingham, UK',8.113403,5.537037,within-1-month,under-30,London,5,3,4,57.8125,Coventry
+159,5,14,view,1729941136683,3,'Birmingham, UK',5.374,5.537037,within-1-month,under-30,London,4,5,3,57.8125,Coventry
+160,5,14,purchase,1729941139874,3,'Birmingham, UK',8.113403,5.537037,within-1-month,under-30,London,3,4,5,28,Coventry
+161,5,38.512136,browse,1729941145996,6.978155,'Birmingham, UK',3.322,5.537037,within-2-weeks,under-30,London,4,3,5,57.8125,Coventry
+162,5,22,add_to_wishlist,1729941148975,11,'Coventry, UK',8.113403,5.537037,within-1-month,under-30,London,5,3,4,57.8125,Coventry
+163,5,38.512136,browse,1729941152835,6.978155,'Birmingham, UK',3.759,5.537037,this-month,under-30,London,3,4,5,57.8125,Coventry
+164,5,7,view,1729941158634,1,'London, UK',3.368,5.537037,within-1-month,under-30,London,3,5,4,57.8125,Coventry
+165,5,7,purchase,1729941159555,1,'London, UK',8.113403,5.537037,within-1-month,under-30,London,5,4,3,29,Coventry
+166,5,38.512136,browse,1729941164896,6.978155,'Birmingham, UK',3.621,5.537037,within-1-month,over-100,London,3,5,4,57.8125,Coventry
+167,5,16,view,1729941175972,4,'Coventry, UK',3.782,5.537037,within-1-month,under-30,London,5,3,4,57.8125,Coventry
+168,5,16,purchase,1729941176929,4,'Coventry, UK',8.113403,5.537037,within-1-month,under-30,London,5,4,3,30,Coventry
+169,5,38.512136,view_friend_profile,1729941184902,6.978155,'Birmingham, UK',8.113403,1,within-1-month,under-30,London,3,4,5,57.8125,Coventry
+170,5,13,remove_from_wishlist,1729941197714,7,'Birmingham, UK',8.113403,5.537037,within-1-month,under-30,London,3,4,5,57.8125,Coventry
+171,5,38.512136,browse,1729941202305,6.978155,'Birmingham, UK',4.501,5.537037,within-1-month,free,London,4,5,3,57.8125,Coventry
+172,5,38.512136,browse,1729941206489,6.978155,'Birmingham, UK',4.115,5.537037,within-1-month,free,London,4,5,3,57.8125,Coventry
+173,5,11,view,1729941218601,6,'Leeds, UK',9.635,5.537037,within-1-month,under-30,London,3,4,5,57.8125,Coventry
+174,5,11,purchase,1729941219836,6,'Leeds, UK',8.113403,5.537037,within-1-month,under-30,London,3,5,4,31,Coventry
+175,7,15,view,1729941292275,2,'Northampton, UK',3.501,5.537037,within-1-month,under-30,London,1,4,7,57.8125,Manchester
+176,7,15,purchase,1729941293148,2,'Northampton, UK',8.113403,5.537037,within-1-month,under-30,London,4,7,1,32,Manchester
+177,7,17,view,1729941305842,15,'Warwick, UK',2.548,5.537037,within-1-month,under-30,London,4,7,1,57.8125,Manchester
+178,7,17,purchase,1729941306880,15,'Warwick, UK',8.113403,5.537037,within-1-month,under-30,London,4,7,1,33,Manchester
+179,7,38.512136,browse,1729941317220,6.978155,'Birmingham, UK',6.26,5.537037,within-1-month,under-30,London,1,4,7,57.8125,Manchester
+180,7,12,add_to_wishlist,1729941322091,3,'Birmingham, UK',8.113403,5.537037,within-1-month,under-30,London,4,7,1,57.8125,Manchester
+181,7,38.512136,browse,1729941326994,6.978155,'Birmingham, UK',4.8,5.537037,within-1-month,free,London,4,7,1,57.8125,Manchester
+182,7,12,view,1729941337478,3,'Birmingham, UK',7.027,5.537037,within-1-month,under-30,London,4,7,1,57.8125,Manchester
+183,7,12,purchase,1729941338367,3,'Birmingham, UK',8.113403,5.537037,within-1-month,under-30,London,1,4,7,34,Manchester
+184,7,38.512136,browse,1729941344269,6.978155,'Birmingham, UK',3.023,5.537037,within-1-month,over-100,London,1,4,7,57.8125,Manchester
+185,7,14,view,1729941353001,3,'Birmingham, UK',2.793,5.537037,within-1-month,under-30,London,1,7,4,57.8125,Manchester
+186,7,14,purchase,1729941353977,3,'Birmingham, UK',8.113403,5.537037,within-1-month,under-30,London,7,1,4,35,Manchester
+187,7,38.512136,view_friend_profile,1729941361586,6.978155,'Birmingham, UK',8.113403,6,within-1-month,under-30,London,1,4,7,57.8125,Manchester
+188,7,10,add_to_wishlist,1729941373500,1,'Manchester, UK',8.113403,5.537037,within-1-month,under-30,London,7,1,4,57.8125,Manchester
+189,7,14,add_to_wishlist,1729941378449,3,'Birmingham, UK',8.113403,5.537037,within-1-month,under-30,London,7,1,4,57.8125,Manchester
+190,7,7,remove_from_wishlist,1729941379780,1,'London, UK',8.113403,5.537037,within-1-month,under-30,London,7,4,1,57.8125,Manchester
+191,7,11,view,1729941390048,6,'Leeds, UK',8.343,5.537037,within-1-month,under-30,London,7,1,4,57.8125,Manchester
+192,7,38.512136,browse,1729941393158,6.978155,'Birmingham, UK',3.033,5.537037,within-1-month,under-30,London,1,4,7,57.8125,Manchester
+193,7,24,add_to_wishlist,1729941395332,8,'Coventry, UK',8.113403,5.537037,within-1-month,under-30,London,1,4,7,57.8125,Manchester
+194,7,20,view,1729941408108,10,'London, UK',2.858,5.537037,within-1-month,under-30,London,4,1,7,57.8125,Manchester
+195,7,20,purchase,1729941408984,10,'London, UK',8.113403,5.537037,within-1-month,under-30,London,1,4,7,36,Manchester
+196,7,8,view,1729941419572,1,'Bristol, UK',5.019,5.537037,within-1-month,under-30,London,1,7,4,57.8125,Manchester
+197,7,8,purchase,1729941421229,1,'Bristol, UK',8.113403,5.537037,within-1-month,under-30,London,1,7,4,37,Manchester
+198,7,38.512136,view_friend_profile,1729941426082,6.978155,'Birmingham, UK',8.113403,6,within-1-month,under-30,London,4,7,1,57.8125,Manchester
+199,9,38.512136,browse,1729941497503,6.978155,'Birmingham, UK',3.065,5.537037,within-1-month,under-30,London,2,7,1,57.8125,London
+200,9,38.512136,browse,1729941500822,6.978155,'Birmingham, UK',3.238,5.537037,within-1-month,under-30,London,1,7,2,57.8125,London
+201,9,11,add_to_wishlist,1729941502718,6,'Leeds, UK',8.113403,5.537037,within-1-month,under-30,London,2,7,1,57.8125,London
+202,9,38.512136,browse,1729941505807,6.978155,'Birmingham, UK',2.944,5.537037,within-1-month,under-30,London,2,7,1,57.8125,London
+203,9,20,view,1729941509828,10,'London, UK',2.664,5.537037,within-1-month,under-30,London,1,7,2,57.8125,London
+204,9,20,purchase,1729941510586,10,'London, UK',8.113403,5.537037,within-1-month,under-30,London,2,1,7,38,London
+205,9,38.512136,browse,1729941520108,6.978155,'Birmingham, UK',3.365,5.537037,within-1-month,between-30-and-100,London,2,7,1,57.8125,London
+206,9,10,add_to_wishlist,1729941524355,1,'Manchester, UK',8.113403,5.537037,within-1-month,under-30,London,1,2,7,57.8125,London
+207,9,16,view,1729941531697,4,'Coventry, UK',2.948,5.537037,within-1-month,under-30,London,7,1,2,57.8125,London
+208,9,16,purchase,1729941532585,4,'Coventry, UK',8.113403,5.537037,within-1-month,under-30,London,2,1,7,39,London
+209,9,38.512136,browse,1729941563717,6.978155,'Birmingham, UK',4.105,5.537037,within-1-month,over-100,London,1,7,2,57.8125,London
+210,9,17,view,1729941569097,15,'Warwick, UK',4.058,5.537037,within-1-month,under-30,London,1,7,2,57.8125,London
+211,9,17,purchase,1729941570003,15,'Warwick, UK',8.113403,5.537037,within-1-month,under-30,London,2,7,1,40,London
+212,6,8,view,1730049895914,1,'Bristol, UK',14.777,5.537037,within-1-month,under-30,London,2,6,7,57.8125,Birmingham
+213,6,8,purchase,1730049896760,1,'Bristol, UK',8.113403,5.537037,within-1-month,under-30,London,7,6,2,41,Birmingham
+214,4,38.512136,browse,1730063015027,6.978155,'Birmingham, UK',24.759,5.537037,within-1-month,under-30,Liverpool,1,6,14,57.8125,Liverpool
+215,4,38.512136,browse,1730063022338,6.978155,'Birmingham, UK',7.206,5.537037,within-1-month,under-30,Liverpool,1,6,14,57.8125,Liverpool
+216,4,38.512136,browse,1730063025310,6.978155,'Birmingham, UK',2.861,5.537037,this-month,under-30,London,1,6,14,57.8125,Liverpool
+217,4,7,view,1730063052688,1,'London, UK',24.737,5.537037,within-1-month,under-30,London,6,14,1,57.8125,Liverpool
+218,4,8,view,1730063075783,1,'Bristol, UK',13.707,5.537037,within-1-month,under-30,London,6,1,14,57.8125,Liverpool
+219,4,8,purchase,1730063098678,1,'Bristol, UK',8.113403,5.537037,within-1-month,under-30,London,6,14,1,42,Liverpool
+220,7,38.512136,view_friend_profile,1730063112521,6.978155,'Birmingham, UK',8.113403,4,within-1-month,under-30,London,7,4,1,57.8125,Manchester
+221,4,38.512136,view_friend_profile,1730063122510,6.978155,'Birmingham, UK',8.113403,7,within-1-month,under-30,London,14,1,6,57.8125,Liverpool
+222,4,16,view,1730063141587,4,'Coventry, UK',4.809,5.537037,within-1-month,under-30,London,6,14,1,57.8125,Liverpool
+223,4,38.512136,browse,1730063146802,6.978155,'Birmingham, UK',5.113,5.537037,within-1-month,between-30-and-100,London,1,6,14,57.8125,Liverpool
+224,4,18,view,1730063156839,14,'Manchester, UK',7.469,5.537037,within-1-month,under-30,London,1,6,14,57.8125,Liverpool
+225,4,9,view,1730063169405,4,'Edinburgh, UK',3.879,5.537037,within-1-month,under-30,London,6,1,14,57.8125,Liverpool
+226,4,38.512136,browse,1730063173788,6.978155,'Birmingham, UK',4.288,5.537037,within-1-month,between-30-and-100,London,1,6,14,57.8125,Liverpool
+227,4,15,view,1730063182997,2,'Northampton, UK',4.187,5.537037,within-1-month,under-30,London,14,1,6,57.8125,Liverpool
+228,4,15,purchase,1730063184012,2,'Northampton, UK',8.113403,5.537037,within-1-month,under-30,London,1,6,14,43,Liverpool
+229,6,18,view,1730064813311,14,'Manchester, UK',4.9,5.537037,within-1-month,under-30,London,6,7,2,57.8125,Birmingham
+230,6,18,purchase,1730064814146,14,'Manchester, UK',8.113403,5.537037,within-1-month,under-30,London,2,7,6,44,Birmingham
+231,2,7,view,1730067311519,1,'London, UK',3.628,5.537037,within-1-month,under-30,London,4.583095,5.047278,5.267908,57.8125,Birmingham
+232,6,38.512136,browse,1730068223723,6.978155,'Birmingham, UK',4.004,5.537037,this-week,under-30,London,6,2,7,57.8125,Birmingham
+233,6,38.512136,browse,1730068227388,6.978155,'Birmingham, UK',3.591,5.537037,this-month,under-30,London,6,7,2,57.8125,Birmingham
+234,6,7,view,1730068235499,1,'London, UK',3.114,5.537037,within-1-month,under-30,London,2,7,6,57.8125,Birmingham
+235,6,38.512136,browse,1730068239036,6.978155,'Birmingham, UK',3.458,5.537037,within-1-month,under-30,London,6,2,7,57.8125,Birmingham
+236,6,29,view,1730068258120,2,'Birmingham, UK',13.785,5.537037,within-1-month,under-30,London,6,7,2,57.8125,Birmingham
+237,6,15,view,1730068297424,2,'Northampton, UK',3.959,5.537037,within-1-month,under-30,London,2,6,7,57.8125,Birmingham
+238,6,15,purchase,1730068298480,2,'Northampton, UK',8.113403,5.537037,within-1-month,under-30,London,7,6,2,45,Birmingham
+239,6,38.512136,browse,1730068305227,6.978155,'Birmingham, UK',4.511,5.537037,within-1-month,under-30,London,7,6,2,57.8125,Birmingham
+240,6,38.512136,browse,1730068309379,6.978155,'Birmingham, UK',4.076,5.537037,within-1-month,under-30,London,2,7,6,57.8125,Birmingham
+241,6,38.512136,browse,1730068314053,6.978155,'Birmingham, UK',4.608,5.537037,within-1-month,under-30,London,7,2,6,57.8125,Birmingham
+242,6,24,view,1730068326460,8,'Coventry, UK',5.239,5.537037,within-1-month,under-30,London,7,2,6,57.8125,Birmingham
+243,6,16,view,1730068351749,4,'Coventry, UK',2.323,5.537037,within-1-month,under-30,London,2,6,7,57.8125,Birmingham
+244,6,16,purchase,1730068352521,4,'Coventry, UK',8.113403,5.537037,within-1-month,under-30,London,2,7,6,46,Birmingham
+245,6,17,view,1730068369335,15,'Warwick, UK',3.694,5.537037,within-1-month,under-30,London,7,6,2,57.8125,Birmingham
+246,6,17,purchase,1730068370603,15,'Warwick, UK',8.113403,5.537037,within-1-month,under-30,London,7,6,2,47,Birmingham
+247,6,23,view,1730068385580,9,'Warwick, UK',5.24,5.537037,within-1-month,under-30,London,6,2,7,57.8125,Birmingham
+248,6,25,view,1730068398990,5,'Liverpool, UK',5.408,5.537037,within-1-month,under-30,London,7,2,6,57.8125,Birmingham
+249,6,26,view,1730068407761,5,'Newcastle, UK',6.864,5.537037,within-1-month,under-30,London,2,7,6,57.8125,Birmingham
+250,6,28,view,1730068439639,6,'London, UK',27.303,5.537037,within-1-month,under-30,London,2,6,7,57.8125,Birmingham
+251,6,38.512136,browse,1730068448227,6.978155,'Birmingham, UK',6.747,5.537037,within-1-month,under-30,London,7,6,2,57.8125,Birmingham
+252,6,28,view,1730068456167,6,'London, UK',5.15,5.537037,within-1-month,under-30,London,6,7,2,57.8125,Birmingham
+253,6,38.512136,view_friend_profile,1730068460294,6.978155,'Birmingham, UK',8.113403,1,within-1-month,under-30,London,2,7,6,57.8125,Birmingham
+254,6,38.512136,view_friend_profile,1730068463777,6.978155,'Birmingham, UK',8.113403,7,within-1-month,under-30,London,7,2,6,57.8125,Birmingham
+255,6,38.512136,view_friend_profile,1730068470111,6.978155,'Birmingham, UK',8.113403,3,within-1-month,under-30,London,7,2,6,57.8125,Birmingham
+256,3,19,view,1730068499807,13,'Birmingham, UK',3.216,5.537037,within-1-month,under-30,London,6,1,7,57.8125,Coventry
+257,3,19,purchase,1730068500531,13,'Birmingham, UK',8.113403,5.537037,within-1-month,under-30,London,7,1,6,48,Coventry
+258,3,19,view,1730068506364,13,'Birmingham, UK',1.365,5.537037,within-1-month,under-30,London,6,7,1,57.8125,Coventry
+259,3,19,add_to_wishlist,1730068509270,13,'Birmingham, UK',8.113403,5.537037,within-1-month,under-30,London,6,1,7,57.8125,Coventry
+260,3,17,view,1730068523412,15,'Warwick, UK',3.161,5.537037,within-1-month,under-30,London,6,7,1,57.8125,Coventry
+261,3,17,purchase,1730068524502,15,'Warwick, UK',8.113403,5.537037,within-1-month,under-30,London,1,6,7,49,Coventry
+262,3,25,view,1730068544211,5,'Liverpool, UK',5.74,5.537037,within-1-month,under-30,London,6,1,7,57.8125,Coventry
+263,3,26,view,1730068551449,5,'Newcastle, UK',4.753,5.537037,within-1-month,under-30,London,7,1,6,57.8125,Coventry
+264,3,31,view,1730068565866,3,'Coventry, UK',9.493,5.537037,within-1-month,under-30,London,1,6,7,57.8125,Coventry
+265,3,38.512136,browse,1730068569052,6.978155,'Birmingham, UK',3.107,5.537037,within-1-month,under-30,London,7,6,1,57.8125,Coventry
+266,3,38.512136,browse,1730068571774,6.978155,'Birmingham, UK',2.625,5.537037,within-1-month,over-100,London,6,1,7,57.8125,Coventry
+267,3,38.512136,browse,1730068575570,6.978155,'Birmingham, UK',3.698,5.537037,within-1-month,under-30,London,7,1,6,57.8125,Coventry
+268,3,38.512136,browse,1730068581738,6.978155,'Birmingham, UK',6.077,5.537037,within-1-month,under-30,London,6,7,1,57.8125,Coventry
+269,3,38.512136,browse,1730068587844,6.978155,'Birmingham, UK',6.046,5.537037,within-1-month,under-30,business,7,1,6,57.8125,Coventry
+270,3,38.512136,browse,1730068597066,6.978155,'Birmingham, UK',9.159,5.537037,within-1-month,under-30,'Birmingham, UK',6,7,1,57.8125,Coventry
+271,3,38.512136,browse,1730068602217,6.978155,'Birmingham, UK',5.091,5.537037,within-1-month,under-30,'Northampton, UK',1,7,6,57.8125,Coventry
+272,3,38.512136,browse,1730068607435,6.978155,'Birmingham, UK',2.97,5.537037,within-1-month,under-30,London,6,1,7,57.8125,Coventry
+273,3,20,view,1730068617944,10,'London, UK',8.804,5.537037,within-1-month,under-30,London,7,6,1,57.8125,Coventry
+274,3,20,purchase,1730068618684,10,'London, UK',8.113403,5.537037,within-1-month,under-30,London,6,1,7,50,Coventry
+275,3,14,view,1730068628387,3,'Birmingham, UK',2.729,5.537037,within-1-month,under-30,London,7,6,1,57.8125,Coventry
+276,3,14,purchase,1730068629315,3,'Birmingham, UK',8.113403,5.537037,within-1-month,under-30,London,1,6,7,51,Coventry
+277,7,38.512136,view_friend_profile,1730068643442,6.978155,'Birmingham, UK',8.113403,6,within-1-month,under-30,London,4,1,7,57.8125,Manchester
+278,7,38.512136,view_friend_profile,1730068646164,6.978155,'Birmingham, UK',8.113403,4,within-1-month,under-30,London,1,7,4,57.8125,Manchester
+279,7,11,view,1730068657737,6,'Leeds, UK',7.139,5.537037,within-1-month,under-30,London,7,4,1,57.8125,Manchester
+280,7,11,purchase,1730068658571,6,'Leeds, UK',8.113403,5.537037,within-1-month,under-30,London,7,4,1,52,Manchester
+281,7,16,add_to_wishlist,1730068676547,4,'Coventry, UK',8.113403,5.537037,within-1-month,under-30,London,4,1,7,57.8125,Manchester
+282,7,16,view,1730068683460,4,'Coventry, UK',2.451,5.537037,within-1-month,under-30,London,7,1,4,57.8125,Manchester
+283,7,16,purchase,1730068684192,4,'Coventry, UK',8.113403,5.537037,within-1-month,under-30,London,7,1,4,53,Manchester
+284,10,38.512136,browse,1730095436907,6.978155,'Birmingham, UK',5.889,5.537037,within-1-month,under-30,London,14,5,2,57.8125,'Warwick, UK'
+285,10,25,add_to_wishlist,1730095440842,5,'Liverpool, UK',8.113403,5.537037,within-1-month,under-30,London,2,14,5,57.8125,'Warwick, UK'
+286,10,38.512136,browse,1730095458301,6.978155,'Birmingham, UK',7.351,5.537037,within-1-month,under-30,London,14,2,5,57.8125,'Warwick, UK'
+287,10,44,view,1730095467552,13,'Newcastle, UK',7.186,5.537037,within-1-month,under-30,London,14,5,2,57.8125,'Warwick, UK'
+288,10,44,purchase,1730095468980,13,'Newcastle, UK',8.113403,5.537037,within-1-month,under-30,London,2,5,14,54,'Warwick, UK'
+289,6,38.512136,view_friend_profile,1730095668095,6.978155,'Birmingham, UK',8.113403,3,within-1-month,under-30,London,2,7,6,57.8125,Birmingham
+290,10,38.512136,browse,1730095713307,6.978155,'Birmingham, UK',4.064,5.537037,within-1-month,over-100,London,14,5,2,57.8125,'Warwick, UK'
+291,10,32,view,1730095721305,7,'Liverpool, UK',5.738,5.537037,within-1-month,under-30,London,14,5,2,57.8125,'Warwick, UK'
+292,10,32,purchase,1730095722315,7,'Liverpool, UK',8.113403,5.537037,within-1-month,under-30,London,2,5,14,55,'Warwick, UK'
+293,10,25,view,1730095758663,5,'Liverpool, UK',24.146,5.537037,within-1-month,under-30,London,5,2,14,57.8125,'Warwick, UK'
+294,10,25,purchase,1730095761234,5,'Liverpool, UK',8.113403,5.537037,within-1-month,under-30,London,2,5,14,56,'Warwick, UK'
+295,10,38.512136,browse,1730095778433,6.978155,'Birmingham, UK',5.416,5.537037,within-1-month,under-30,London,5,2,14,57.8125,'Warwick, UK'
+296,10,38.512136,browse,1730095791364,6.978155,'Birmingham, UK',12.855,5.537037,within-1-month,under-30,'Warwick, UK',2,14,5,57.8125,'Warwick, UK'
+297,10,23,view,1730095803831,9,'Warwick, UK',4.103,5.537037,within-1-month,under-30,London,5,2,14,57.8125,'Warwick, UK'
+298,10,28,view,1730095830802,6,'London, UK',12.34,5.537037,within-1-month,under-30,London,5,14,2,57.8125,'Warwick, UK'
+299,10,31,add_to_wishlist,1730095835075,3,'Coventry, UK',8.113403,5.537037,within-1-month,under-30,London,5,14,2,57.8125,'Warwick, UK'
+300,1,38.512136,browse,1730095960653,6.978155,'Birmingham, UK',4.304,5.537037,within-1-month,between-30-and-100,London,1,6,7,57.8125,'London, UK'
+301,1,28,view,1730095969437,6,'London, UK',5.973,5.537037,within-1-month,under-30,London,7,6,1,57.8125,'London, UK'
+302,1,28,purchase,1730095975609,6,'London, UK',8.113403,5.537037,within-1-month,under-30,London,1,6,7,57,'London, UK'
+303,1,28,view,1730096251371,6,'London, UK',6.2,5.537037,within-1-month,under-30,London,6,1,7,57.8125,'London, UK'
+304,1,38.512136,browse,1730096257695,6.978155,'Birmingham, UK',6.241,5.537037,this-week,under-30,London,7,6,1,57.8125,'London, UK'
+305,1,18,view,1730096268206,14,'Manchester, UK',7.333,5.537037,within-1-month,under-30,London,1,7,6,57.8125,'London, UK'
+306,1,38.512136,browse,1730096272912,6.978155,'Birmingham, UK',4.606,5.537037,within-1-month,under-30,London,7,1,6,57.8125,'London, UK'
+307,1,32,view,1730096283283,7,'Liverpool, UK',5.296,5.537037,within-1-month,under-30,London,7,1,6,57.8125,'London, UK'
+308,1,32,purchase,1730096284290,7,'Liverpool, UK',8.113403,5.537037,within-1-month,under-30,London,1,7,6,58,'London, UK'
+309,11,28,view,1730096486928,6,'London, UK',4.265,5.537037,within-1-month,under-30,London,10,3,14,57.8125,'Coventry, UK'
+310,11,28,purchase,1730096488677,6,'London, UK',8.113403,5.537037,within-1-month,under-30,London,14,10,3,59,'Coventry, UK'
+311,11,38.512136,browse,1730096511130,6.978155,'Birmingham, UK',16.638,5.537037,within-1-month,between-30-and-100,London,3,10,14,57.8125,'Coventry, UK'
+312,11,38.512136,browse,1730096532891,6.978155,'Birmingham, UK',3.62,5.537037,within-1-month,under-30,London,10,3,14,57.8125,'Coventry, UK'
+313,11,37,view,1730096544201,10,'Northampton, UK',6.719,5.537037,within-1-month,under-30,London,14,10,3,57.8125,'Coventry, UK'
+314,11,20,view,1730096554428,10,'London, UK',7.766,5.537037,within-1-month,under-30,London,10,14,3,57.8125,'Coventry, UK'
+315,11,37,view,1730096562576,10,'Northampton, UK',6.143,5.537037,within-1-month,under-30,London,10,14,3,57.8125,'Coventry, UK'
+316,11,37,purchase,1730096563916,10,'Northampton, UK',8.113403,5.537037,within-1-month,under-30,London,14,10,3,60,'Coventry, UK'
+317,10,38.512136,view_friend_profile,1730096585004,6.978155,'Birmingham, UK',8.113403,11,within-1-month,under-30,London,2,5,14,57.8125,'Warwick, UK'
+318,7,38.512136,view_friend_profile,1730096607073,6.978155,'Birmingham, UK',8.113403,4,within-1-month,under-30,London,1,4,7,57.8125,Manchester
+319,7,38.512136,view_friend_profile,1730096612986,6.978155,'Birmingham, UK',8.113403,6,within-1-month,under-30,London,4,7,1,57.8125,Manchester
+320,7,38.512136,browse,1730096627231,6.978155,'Birmingham, UK',3.449,5.537037,within-1-month,under-30,London,4,1,7,57.8125,Manchester
+321,7,14,view,1730096634881,3,'Birmingham, UK',3.087,5.537037,within-1-month,under-30,London,7,4,1,57.8125,Manchester
+322,7,14,purchase,1730096635837,3,'Birmingham, UK',8.113403,5.537037,within-1-month,under-30,London,1,4,7,61,Manchester
+323,7,38.512136,browse,1730096649150,6.978155,'Birmingham, UK',7.477,5.537037,within-1-month,between-30-and-100,London,1,7,4,57.8125,Manchester
+324,7,33,view,1730096664136,8,'Warwick, UK',7.918,5.537037,within-1-month,under-30,London,1,7,4,57.8125,Manchester
+325,7,33,purchase,1730096664868,8,'Warwick, UK',8.113403,5.537037,within-1-month,under-30,London,1,7,4,62,Manchester
+326,3,38.512136,view_friend_profile,1730096860706,6.978155,'Birmingham, UK',8.113403,6,within-1-month,under-30,London,6,7,1,57.8125,Coventry
+327,3,38.512136,browse,1730096884380,6.978155,'Birmingham, UK',5.125,5.537037,within-1-month,under-30,London,1,6,7,57.8125,Coventry
+328,3,16,view,1730096901340,4,'Coventry, UK',9.015,5.537037,within-1-month,under-30,London,6,7,1,57.8125,Coventry
+329,3,16,purchase,1730096902285,4,'Coventry, UK',8.113403,5.537037,within-1-month,under-30,London,6,1,7,63,Coventry
+330,3,16,view,1730096923759,4,'Coventry, UK',2.18,5.537037,within-1-month,under-30,London,7,6,1,57.8125,Coventry
+331,3,16,view,1730096930612,4,'Coventry, UK',4.17,5.537037,within-1-month,under-30,London,1,6,7,57.8125,Coventry
+332,3,27,view,1730096951364,6,'Birmingham, UK',12.727,5.537037,within-1-month,under-30,London,6,7,1,57.8125,Coventry
+333,3,27,view,1730096955045,6,'Birmingham, UK',1.876,5.537037,within-1-month,under-30,London,7,1,6,57.8125,Coventry
+334,3,30,view,1730096964838,2,'Manchester, UK',7.824,5.537037,within-1-month,under-30,London,1,7,6,57.8125,Coventry
+335,3,30,purchase,1730096965995,2,'Manchester, UK',8.113403,5.537037,within-1-month,under-30,London,1,6,7,64,Coventry
+336,10,38.512136,view_friend_profile,1730097024602,6.978155,'Birmingham, UK',8.113403,3,within-1-month,under-30,London,5,14,2,57.8125,'Warwick, UK'
+337,3,25,add_to_wishlist,1730097243754,5,'Liverpool, UK',8.113403,5.537037,within-1-month,under-30,London,6,7,4,57.8125,'Coventry, UK'
+338,3,38.512136,browse,1730097248557,6.978155,'Birmingham, UK',4.702,5.537037,within-2-weeks,under-30,London,6,7,4,57.8125,'Coventry, UK'
+339,3,42,view,1730097262173,12,'Leicester, UK',9.728,5.537037,within-1-month,under-30,London,7,4,6,57.8125,'Coventry, UK'
+340,3,42,purchase,1730097276646,12,'Leicester, UK',8.113403,5.537037,within-1-month,under-30,London,6,4,7,65,'Coventry, UK'
+341,3,38.512136,browse,1730097285820,6.978155,'Birmingham, UK',6.604,5.537037,within-1-month,over-100,'Northampton, UK',6,4,7,57.8125,'Coventry, UK'
+342,3,37,view,1730097295621,10,'Northampton, UK',6.177,5.537037,within-1-month,under-30,London,4,6,7,57.8125,'Coventry, UK'
+343,3,15,view,1730097308649,2,'Northampton, UK',7.817,5.537037,within-1-month,under-30,London,6,7,4,57.8125,'Coventry, UK'
+344,3,38.512136,browse,1730097313214,6.978155,'Birmingham, UK',4.532,5.537037,within-1-month,over-100,London,7,6,4,57.8125,'Coventry, UK'
+345,3,47,add_to_wishlist,1730097318492,15,'Bristol, UK',8.113403,5.537037,within-1-month,under-30,London,4,6,7,57.8125,'Coventry, UK'
+346,3,38.512136,browse,1730097328397,6.978155,'Birmingham, UK',3.798,5.537037,within-1-month,under-30,London,7,6,4,57.8125,'Coventry, UK'
+347,3,47,view,1730097339468,15,'Bristol, UK',9.858,5.537037,within-1-month,under-30,London,6,4,7,57.8125,'Coventry, UK'
+348,3,47,purchase,1730097340762,15,'Bristol, UK',8.113403,5.537037,within-1-month,under-30,London,6,4,7,66,'Coventry, UK'
+349,4,38.512136,view_friend_profile,1730097381481,6.978155,'Birmingham, UK',8.113403,7,within-1-month,under-30,London,6,1,14,57.8125,Liverpool
+350,4,38.512136,browse,1730097396651,6.978155,'Birmingham, UK',4.894,5.537037,within-1-month,over-100,London,6,14,1,57.8125,Liverpool
+351,4,10,add_to_wishlist,1730097400290,1,'Manchester, UK',8.113403,5.537037,within-1-month,under-30,London,14,6,1,57.8125,Liverpool
+352,4,10,view,1730097409096,1,'Manchester, UK',4.941,5.537037,within-1-month,under-30,London,1,6,14,57.8125,Liverpool
+353,4,10,purchase,1730097410076,1,'Manchester, UK',8.113403,5.537037,within-1-month,under-30,London,1,14,6,67,Liverpool
+354,4,38.512136,browse,1730097423081,6.978155,'Birmingham, UK',8.58,5.537037,within-1-month,under-30,London,6,1,14,57.8125,Liverpool
+355,4,38,view,1730097442465,10,'Leeds, UK',16.694,5.537037,within-1-month,under-30,London,6,14,1,57.8125,Liverpool
+356,4,38,purchase,1730097443440,10,'Leeds, UK',8.113403,5.537037,within-1-month,under-30,London,14,1,6,68,Liverpool
+357,4,27,view,1730097486293,6,'Birmingham, UK',4.428,5.537037,within-1-month,under-30,London,1,14,6,57.8125,Liverpool
+358,4,34,view,1730097497153,8,'Bristol, UK',5.401,5.537037,within-1-month,under-30,London,14,6,1,57.8125,Liverpool
+359,4,36,view,1730097505258,9,'Leicester, UK',5.553,5.537037,within-1-month,under-30,London,1,6,14,57.8125,Liverpool
+360,4,38.512136,browse,1730097510930,6.978155,'Birmingham, UK',3.61,5.537037,within-1-month,free,London,1,14,6,57.8125,Liverpool
+361,4,38.512136,browse,1730097520095,6.978155,'Birmingham, UK',6.263,5.537037,within-1-month,free,London,6,1,14,57.8125,Liverpool
+362,4,38.512136,browse,1730097535849,6.978155,'Birmingham, UK',11.835,5.537037,within-1-month,free,London,6,1,14,57.8125,Liverpool
+363,4,44,view,1730097551464,13,'Newcastle, UK',8.466,5.537037,within-1-month,under-30,London,14,6,1,57.8125,Liverpool
+364,1,38.512136,browse,1730097673589,6.978155,'Birmingham, UK',5.109,5.537037,within-1-month,over-100,London,1,7,6,57.8125,'London, UK'
+365,1,37,view,1730097681803,10,'Northampton, UK',5.821,5.537037,within-1-month,under-30,London,6,7,1,57.8125,'London, UK'
+366,1,37,purchase,1730097683000,10,'Northampton, UK',8.113403,5.537037,within-1-month,under-30,London,6,7,1,69,'London, UK'
+367,1,38.512136,view_friend_profile,1730097695357,6.978155,'Birmingham, UK',8.113403,9,within-1-month,under-30,London,1,6,7,57.8125,'London, UK'
+368,9,38.512136,view_friend_profile,1730097737146,6.978155,'Birmingham, UK',8.113403,1,within-1-month,under-30,London,1,7,2,57.8125,London
+369,9,38.512136,browse,1730097754514,6.978155,'Birmingham, UK',6.398,5.537037,within-1-month,under-30,London,7,1,2,57.8125,'London, UK'
+370,9,38.512136,browse,1730097757729,6.978155,'Birmingham, UK',3.1,5.537037,within-1-month,over-100,London,2,1,7,57.8125,'London, UK'
+371,9,45,view,1730097769010,14,'Birmingham, UK',8.634,5.537037,within-1-month,under-30,London,1,2,7,57.8125,'London, UK'
+372,9,45,purchase,1730097770298,14,'Birmingham, UK',8.113403,5.537037,within-1-month,under-30,London,7,2,1,70,'London, UK'
+373,9,40,view,1730097811033,11,'Liverpool, UK',8.438,5.537037,within-1-month,under-30,London,7,1,2,57.8125,'London, UK'
+374,9,40,purchase,1730097811933,11,'Liverpool, UK',8.113403,5.537037,within-1-month,under-30,London,1,2,7,71,'London, UK'
+375,9,38.512136,browse,1730097924028,6.978155,'Birmingham, UK',6.197,5.537037,within-1-month,under-30,Coventry,2,7,1,57.8125,'London, UK'
+376,9,24,view,1730097932623,8,'Coventry, UK',4.509,5.537037,within-1-month,under-30,London,2,1,7,57.8125,'London, UK'
+377,9,24,purchase,1730097933321,8,'Coventry, UK',8.113403,5.537037,within-1-month,under-30,London,2,7,1,72,'London, UK'
+378,9,38.512136,browse,1730097939164,6.978155,'Birmingham, UK',4.493,5.537037,within-1-month,under-30,Coventry,7,2,1,57.8125,'London, UK'
+379,9,22,add_to_wishlist,1730097944701,11,'Coventry, UK',8.113403,5.537037,within-1-month,under-30,London,1,2,7,57.8125,'London, UK'
+380,9,23,view,1730097960206,9,'Warwick, UK',4.472,5.537037,within-1-month,under-30,London,2,1,7,57.8125,'London, UK'
+381,9,26,view,1730097973162,5,'Newcastle, UK',3.642,5.537037,within-1-month,under-30,London,1,2,7,57.8125,'London, UK'
+382,9,30,view,1730097985162,2,'Manchester, UK',4.065,5.537037,within-1-month,under-30,London,7,1,2,57.8125,'London, UK'
+383,9,30,purchase,1730097986040,2,'Manchester, UK',8.113403,5.537037,within-1-month,under-30,London,1,2,7,73,'London, UK'
+384,8,38.512136,browse,1730098083558,6.978155,'Birmingham, UK',8.452,5.537037,within-1-month,between-30-and-100,London,2,6,1,57.8125,'Birmingham, UK'
+385,8,35,view,1730098092483,9,'Derby, UK',6.374,5.537037,within-1-month,under-30,London,2,6,1,57.8125,'Birmingham, UK'
+386,8,38.512136,browse,1730098097859,6.978155,'Birmingham, UK',5.323,5.537037,within-1-month,between-30-and-100,London,2,1,6,57.8125,'Birmingham, UK'
+387,8,37,view,1730098107041,10,'Northampton, UK',7.245,5.537037,within-1-month,under-30,London,1,6,2,57.8125,'Birmingham, UK'
+388,8,38.512136,browse,1730098160944,6.978155,'Birmingham, UK',8.12,5.537037,within-1-month,under-30,London,6,2,1,57.8125,'Birmingham, UK'
+389,8,25,view,1730098170464,5,'Liverpool, UK',7.424,5.537037,within-1-month,under-30,London,2,1,6,57.8125,'Birmingham, UK'
+390,8,25,add_to_wishlist,1730098172068,5,'Liverpool, UK',8.113403,5.537037,within-1-month,under-30,London,1,6,2,57.8125,'Birmingham, UK'
+391,8,38.512136,browse,1730098179633,6.978155,'Birmingham, UK',7.474,5.537037,within-1-month,under-30,London,6,1,2,57.8125,'Birmingham, UK'
+392,8,26,view,1730098186190,5,'Newcastle, UK',5.14,5.537037,within-1-month,under-30,London,2,1,6,57.8125,'Birmingham, UK'
+393,8,38.512136,view_friend_profile,1730098278104,6.978155,'Birmingham, UK',8.113403,5,within-1-month,under-30,London,6,2,1,57.8125,'Birmingham, UK'
+394,8,7,view,1730098370050,1,'London, UK',17.825,5.537037,within-1-month,under-30,London,1,6,2,57.8125,'Birmingham, UK'
+395,8,38.512136,browse,1730098374317,6.978155,'Birmingham, UK',4.193,5.537037,within-1-month,between-30-and-100,London,1,6,2,57.8125,'Birmingham, UK'
+396,8,38.512136,browse,1730098380590,6.978155,'Birmingham, UK',3.862,5.537037,within-1-month,between-30-and-100,London,6,2,1,57.8125,'Birmingham, UK'
+397,8,38.512136,browse,1730098386837,6.978155,'Birmingham, UK',6.154,5.537037,within-2-weeks,between-30-and-100,London,2,1,6,57.8125,'Birmingham, UK'
+398,8,38.512136,browse,1730098403141,6.978155,'Birmingham, UK',16.236,5.537037,within-2-weeks,between-30-and-100,London,2,6,1,57.8125,'Birmingham, UK'
+399,8,38.512136,browse,1730098407906,6.978155,'Birmingham, UK',2.671,5.537037,within-1-month,under-30,London,2,6,1,57.8125,'Birmingham, UK'
+400,8,25,view,1730098411994,5,'Liverpool, UK',2.772,5.537037,within-1-month,under-30,London,1,6,2,57.8125,'Birmingham, UK'
+401,8,26,view,1730098423421,5,'Newcastle, UK',5.025,5.537037,within-1-month,under-30,London,1,2,6,57.8125,'Birmingham, UK'
+402,11,38.512136,view_friend_profile,1730098473819,6.978155,'Birmingham, UK',8.113403,10,within-1-month,under-30,London,10,14,3,57.8125,'Coventry, UK'
+403,11,27,view,1730098511070,6,'Birmingham, UK',8.602,5.537037,within-1-month,under-30,London,3,10,14,57.8125,'Coventry, UK'
+404,11,31,view,1730098520342,3,'Coventry, UK',6.172,5.537037,within-1-month,under-30,London,3,10,14,57.8125,'Coventry, UK'
+405,11,34,view,1730098533875,8,'Bristol, UK',5.797,5.537037,within-1-month,under-30,London,3,10,14,57.8125,'Coventry, UK'
+406,11,38.512136,browse,1730098540454,6.978155,'Birmingham, UK',6.498,5.537037,this-week,under-30,London,10,3,14,57.8125,'Coventry, UK'
+407,11,38.512136,browse,1730098544272,6.978155,'Birmingham, UK',3.76,5.537037,within-2-weeks,under-30,London,10,3,14,57.8125,'Coventry, UK'
+408,11,38.512136,browse,1730098561645,6.978155,'Birmingham, UK',17.289,5.537037,within-2-weeks,under-30,LiverpooL,3,14,10,57.8125,'Coventry, UK'
+409,11,38.512136,browse,1730098565510,6.978155,'Birmingham, UK',3.807,5.537037,within-2-weeks,under-30,London,3,10,14,57.8125,'Coventry, UK'
+410,11,42,view,1730098580932,12,'Leicester, UK',6.546,5.537037,within-1-month,under-30,London,3,10,14,57.8125,'Coventry, UK'
+411,8,38.512136,view_friend_profile,1730134569480,6.978155,'Birmingham, UK',8.113403,5,within-1-month,under-30,London,1,6,2,57.8125,'Birmingham, UK'
+412,8,38.512136,view_friend_profile,1730134580159,6.978155,'Birmingham, UK',8.113403,5,within-1-month,under-30,London,2,1,6,57.8125,'Birmingham, UK'
+413,5,38.512136,view_friend_profile,1730134669507,6.978155,'Birmingham, UK',8.113403,8,within-1-month,under-30,London,4,3,5,57.8125,'Coventry, UK'
+414,5,38.512136,view_friend_profile,1730134673427,6.978155,'Birmingham, UK',8.113403,1,within-1-month,under-30,London,3,4,5,57.8125,'Coventry, UK'
+415,4,34,view,1730144238192,8,'Bristol, UK',56.235,5.537037,within-1-month,under-30,London,1,6,14,57.8125,'Liverpool, UK'
+416,5,12,view,1730147160992,3,'Birmingham, UK',4.815,5.537037,within-1-month,under-30,London,3,5,4,57.8125,'Coventry, UK'
+417,5,8,view,1730147165227,1,'Bristol, UK',1.423,5.537037,within-1-month,under-30,London,4,5,3,57.8125,'Coventry, UK'
+418,6,28,view,1730147374102,6,'London, UK',2.543,5.537037,within-1-month,under-30,London,7,2,6,57.8125,Birmingham
+419,1,29,view,1730147968319,2,'Birmingham, UK',3.036,5.537037,within-1-month,under-30,London,1,7,6,57.8125,'London, UK'
+420,1,40,view,1730147974283,11,'Liverpool, UK',2.251,5.537037,within-1-month,under-30,London,6,7,1,57.8125,'London, UK'
+421,1,48,view,1730147983224,15,'Birmingham, UK',2.472,5.537037,within-1-month,under-30,London,1,6,7,57.8125,'London, UK'
+422,1,38.512136,view_friend_profile,1730286005928,6.978155,'Birmingham, UK',8.113403,3,within-1-month,under-30,London,6,7,1,57.8125,'London, UK'
+423,1,38.512136,browse,1730286020118,6.978155,'Birmingham, UK',3.539,5.537037,this-week,under-30,London,6,1,7,57.8125,'London, UK'
+424,1,18,view,1730286027585,14,'Manchester, UK',5.535,5.537037,within-1-month,under-30,London,1,6,7,57.8125,'London, UK'
+425,1,16,view,1730286062180,4,'Coventry, UK',5.809,5.537037,within-1-month,under-30,London,1,6,7,57.8125,'London, UK'
+426,1,16,purchase,1730286063283,4,'Coventry, UK',8.113403,5.537037,within-1-month,under-30,London,7,1,6,74,'London, UK'
+427,1,38.512136,browse,1730286077717,6.978155,'Birmingham, UK',3.458,5.537037,within-1-month,over-100,London,7,6,1,57.8125,'London, UK'
+428,1,14,view,1730286094434,3,'Birmingham, UK',8.372,5.537037,within-1-month,under-30,London,6,7,1,57.8125,'London, UK'
+429,1,14,purchase,1730286095977,3,'Birmingham, UK',8.113403,5.537037,within-1-month,under-30,London,7,1,6,75,'London, UK'
+430,10,26,view,1730290661846,5,'Newcastle, UK',3.073,5.537037,within-1-month,under-30,London,14,2,5,57.8125,'Warwick, UK'
+431,3,20,view,1730291360497,10,'London, UK',5.021,5.537037,within-1-month,under-30,London,4,6,7,57.8125,'Coventry, UK'
+432,3,38.512136,browse,1730291422587,6.978155,'Birmingham, UK',61.995,5.537037,within-1-month,under-30,London,4,6,7,57.8125,'Coventry, UK'
+433,3,38.512136,browse,1730291425209,6.978155,'Birmingham, UK',2.543,5.537037,within-1-month,under-30,London,4,7,6,57.8125,'Coventry, UK'
+434,3,24,view,1730291430621,8,'Coventry, UK',3.692,5.537037,within-1-month,under-30,London,4,6,7,57.8125,'Coventry, UK'
+435,3,38.512136,browse,1730354306586,6.978155,'Birmingham, UK',5.057,5.537037,within-1-month,under-30,London,7,4,6,57.8125,'Coventry, UK'
+436,3,78,view,1730354314040,11,'Liverpool, UK',5.357,5.537037,within-1-month,under-30,London,4,6,7,57.8125,'Coventry, UK'
+437,3,38.512136,browse,1730354323693,6.978155,'Birmingham, UK',9.569,5.537037,this-week,under-30,London,7,6,4,57.8125,'Coventry, UK'
+438,3,38.512136,browse,1730354326396,6.978155,'Birmingham, UK',2.651,5.537037,this-week,under-30,London,6,7,4,57.8125,'Coventry, UK'
+439,3,38.512136,browse,1730354331534,6.978155,'Birmingham, UK',5.079,5.537037,within-1-month,under-30,London,7,4,6,57.8125,'Coventry, UK'
+440,3,26,view,1730354349375,5,'Newcastle, UK',3.894,5.537037,within-1-month,under-30,London,4,7,6,57.8125,'Coventry, UK'
+441,3,29,view,1730354360280,2,'Birmingham, UK',8.279,5.537037,within-1-month,under-30,London,6,4,7,57.8125,'Coventry, UK'
+442,3,41,view,1730354372428,12,'Birmingham, UK',4.47,5.537037,within-1-month,under-30,London,4,7,6,57.8125,'Coventry, UK'
+443,3,51,view,1730354394092,1,'Birmingham, UK',15.008,5.537037,within-1-month,under-30,London,7,4,6,57.8125,'Coventry, UK'
+444,3,50,view,1730354402912,1,'Coventry, UK',6.123,5.537037,within-1-month,under-30,London,6,4,7,57.8125,'Coventry, UK'
+445,3,38.512136,browse,1730354409055,6.978155,'Birmingham, UK',6.079,5.537037,within-1-month,between-30-and-100,London,6,7,4,57.8125,'Coventry, UK'
+446,3,38.512136,browse,1730354418748,6.978155,'Birmingham, UK',9.626,5.537037,within-1-month,over-100,London,6,7,4,57.8125,'Coventry, UK'
+447,3,38.512136,browse,1730354422361,6.978155,'Birmingham, UK',3.55,5.537037,within-1-month,under-30,London,6,4,7,57.8125,'Coventry, UK'
+448,3,38.512136,browse,1730354442454,6.978155,'Birmingham, UK',16.841,5.537037,within-1-month,under-30,Wol,7,4,6,57.8125,'Coventry, UK'
+449,3,83,view,1730354451500,14,'Wolverhampton, UK',7.459,5.537037,within-1-month,under-30,London,4,6,7,57.8125,'Coventry, UK'
+450,3,58,view,1730354458055,3,'Wolverhampton, UK',4.887,5.537037,within-1-month,under-30,London,6,7,4,57.8125,'Coventry, UK'
+451,8,38.512136,browse,1730354643106,6.978155,'Birmingham, UK',8.944,5.537037,within-1-month,between-30-and-100,London,2,1,6,57.8125,'Birmingham, UK'
+452,8,35,view,1730354659255,9,'Derby, UK',12.912,5.537037,within-1-month,under-30,London,2,6,1,57.8125,'Birmingham, UK'
+453,8,35,purchase,1730354660136,9,'Derby, UK',8.113403,5.537037,within-1-month,under-30,London,1,6,2,76,'Birmingham, UK'
+454,8,38.512136,browse,1730354668621,6.978155,'Birmingham, UK',4.158,5.537037,within-1-month,under-30,London,2,6,1,57.8125,'Birmingham, UK'
+455,8,62,view,1730354715535,5,'Bristol, UK',8.23,5.537037,within-1-month,under-30,London,1,2,6,57.8125,'Birmingham, UK'
+456,8,62,purchase,1730354716759,5,'Bristol, UK',8.113403,5.537037,within-1-month,under-30,London,2,6,1,77,'Birmingham, UK'
+457,8,56,view,1730354753572,3,'Warwick, UK',5.542,5.537037,within-1-month,under-30,London,2,1,6,57.8125,'Birmingham, UK'
+458,8,55,view,1730354766319,2,'London, UK',8.939,5.537037,within-1-month,under-30,London,6,1,2,57.8125,'Birmingham, UK'
+459,8,55,purchase,1730354767220,2,'London, UK',8.113403,5.537037,within-1-month,under-30,London,1,2,6,78,'Birmingham, UK'
+460,8,55,view,1730354771421,2,'London, UK',1.233,5.537037,within-1-month,under-30,London,1,6,2,57.8125,'Birmingham, UK'
+461,8,53,view,1730354787834,2,'Birmingham, UK',13.851,5.537037,within-1-month,under-30,London,1,6,2,57.8125,'Birmingham, UK'
+462,8,53,purchase,1730354800588,2,'Birmingham, UK',8.113403,5.537037,within-1-month,under-30,London,6,1,2,79,'Birmingham, UK'
+463,8,38.512136,view_friend_profile,1730354805634,6.978155,'Birmingham, UK',8.113403,5,within-1-month,under-30,London,2,1,6,57.8125,'Birmingham, UK'
+464,8,38.512136,browse,1730354815442,6.978155,'Birmingham, UK',4.211,5.537037,within-1-month,under-30,London,2,1,6,57.8125,'Birmingham, UK'
+465,8,50,view,1730354845858,1,'Coventry, UK',25.971,5.537037,within-1-month,under-30,London,2,1,6,57.8125,'Birmingham, UK'
+466,3,38.512136,view_friend_profile,1730354885336,6.978155,'Birmingham, UK',8.113403,8,within-1-month,under-30,London,7,6,4,57.8125,'Coventry, UK'
+467,3,61,add_to_wishlist,1730354933296,4,'Nottingham, UK',8.113403,5.537037,within-1-month,under-30,London,7,4,6,57.8125,'Coventry, UK'
+468,10,38.512136,browse,1730354950867,6.978155,'Birmingham, UK',9.143,5.537037,within-1-month,between-30-and-100,'Birmingham, UK',2,5,14,57.8125,'Warwick, UK'
+469,10,51,view,1730354962022,1,'Birmingham, UK',9.418,5.537037,within-1-month,under-30,London,5,14,2,57.8125,'Warwick, UK'
+470,10,51,purchase,1730354964280,1,'Birmingham, UK',8.113403,5.537037,within-1-month,under-30,London,2,14,5,80,'Warwick, UK'
+471,10,38.512136,browse,1730354979437,6.978155,'Birmingham, UK',9.805,5.537037,within-1-month,free,London,14,2,5,57.8125,'Warwick, UK'
+472,10,69,view,1730354992404,7,'Manchester, UK',11.068,5.537037,within-1-month,under-30,London,5,2,14,57.8125,'Warwick, UK'
+473,10,69,purchase,1730354993361,7,'Manchester, UK',8.113403,5.537037,within-1-month,under-30,London,14,2,5,81,'Warwick, UK'
+474,10,38.512136,view_friend_profile,1730355004907,6.978155,'Birmingham, UK',8.113403,3,within-1-month,under-30,London,14,2,5,57.8125,'Warwick, UK'
+475,10,38.512136,view_friend_profile,1730355008029,6.978155,'Birmingham, UK',8.113403,11,within-1-month,under-30,London,2,5,14,57.8125,'Warwick, UK'
+476,10,38.512136,view_friend_profile,1730355012220,6.978155,'Birmingham, UK',8.113403,6,within-1-month,under-30,London,5,2,14,57.8125,'Warwick, UK'
+477,11,38.512136,view_friend_profile,1730355028334,6.978155,'Birmingham, UK',8.113403,10,within-1-month,under-30,London,14,3,10,57.8125,'Coventry, UK'
+478,11,38.512136,browse,1730355045915,6.978155,'Birmingham, UK',4.12,5.537037,within-1-month,under-30,London,3,14,10,57.8125,'Coventry, UK'
+479,11,73,view,1730355078011,9,'Bradford, UK',10.938,5.537037,within-1-month,under-30,London,3,14,10,57.8125,'Coventry, UK'
+480,11,73,purchase,1730355079107,9,'Bradford, UK',8.113403,5.537037,within-1-month,under-30,London,10,3,14,82,'Coventry, UK'
+481,11,73,view,1730355084078,9,'Bradford, UK',1.608,5.537037,within-1-month,under-30,London,10,14,3,57.8125,'Coventry, UK'
+482,11,81,view,1730355099303,14,'Leicester, Uk',8.452,5.537037,within-1-month,under-30,London,3,14,10,57.8125,'Coventry, UK'
+483,11,81,purchase,1730355100059,14,'Leicester, Uk',8.113403,5.537037,within-1-month,under-30,London,14,10,3,83,'Coventry, UK'
+484,11,81,view,1730355103986,14,'Leicester, Uk',0.619,5.537037,within-1-month,under-30,London,14,3,10,57.8125,'Coventry, UK'
+485,11,81,add_to_wishlist,1730355105793,14,'Leicester, Uk',8.113403,5.537037,within-1-month,under-30,London,3,10,14,57.8125,'Coventry, UK'
+486,8,38.512136,view_friend_profile,1730355127249,6.978155,'Birmingham, UK',8.113403,11,within-1-month,under-30,London,2,6,1,57.8125,'Birmingham, UK'
+487,8,83,view,1730355160428,14,'Wolverhampton, UK',9.926,5.537037,within-1-month,under-30,London,1,6,2,57.8125,'Birmingham, UK'
+488,8,83,purchase,1730355161392,14,'Wolverhampton, UK',8.113403,5.537037,within-1-month,under-30,London,2,6,1,84,'Birmingham, UK'
+489,8,83,view,1730355163716,14,'Wolverhampton, UK',0.545,5.537037,within-1-month,under-30,London,1,6,2,57.8125,'Birmingham, UK'
+490,8,84,add_to_wishlist,1730355166706,15,'London, UK',8.113403,5.537037,within-1-month,under-30,London,2,1,6,57.8125,'Birmingham, UK'
+491,8,80,view,1730355188830,13,'Manchester, UK',11.01,5.537037,within-1-month,under-30,London,2,6,1,57.8125,'Birmingham, UK'
+492,8,81,view,1730355199228,14,'Leicester, Uk',7.614,5.537037,within-1-month,under-30,London,6,1,2,57.8125,'Birmingham, UK'
+493,8,81,purchase,1730355200249,14,'Leicester, Uk',8.113403,5.537037,within-1-month,under-30,London,6,2,1,85,'Birmingham, UK'
+494,8,38.512136,browse,1730355215049,6.978155,'Birmingham, UK',6.373,5.537037,within-1-month,between-30-and-100,London,2,6,1,57.8125,'Birmingham, UK'
+495,8,85,view,1730355231194,15,'Bradford, UK',12.557,5.537037,within-1-month,under-30,London,2,1,6,57.8125,'Birmingham, UK'
+496,8,85,purchase,1730355231963,15,'Bradford, UK',8.113403,5.537037,within-1-month,under-30,London,2,6,1,86,'Birmingham, UK'
+497,8,38.512136,view_friend_profile,1730355237097,6.978155,'Birmingham, UK',8.113403,5,within-1-month,under-30,London,2,6,1,57.8125,'Birmingham, UK'
+498,8,38.512136,view_friend_profile,1730355239360,6.978155,'Birmingham, UK',8.113403,3,within-1-month,under-30,London,1,6,2,57.8125,'Birmingham, UK'
+499,8,38.512136,view_friend_profile,1730355241554,6.978155,'Birmingham, UK',8.113403,11,within-1-month,under-30,London,6,1,2,57.8125,'Birmingham, UK'
+500,6,38.512136,browse,1730355255615,6.978155,'Birmingham, UK',5.174,5.537037,within-1-month,under-30,London,2,7,6,57.8125,Birmingham
+501,6,67,view,1730355281343,7,'Birmingham, UK',11.79,5.537037,within-1-month,under-30,London,7,2,6,57.8125,Birmingham
+502,6,67,purchase,1730355282588,7,'Birmingham, UK',8.113403,5.537037,within-1-month,under-30,London,2,6,7,87,Birmingham
+503,6,67,view,1730355290648,7,'Birmingham, UK',4.03,5.537037,within-1-month,under-30,London,2,7,6,57.8125,Birmingham
+504,6,70,view,1730355306132,8,'Norwich, UK',13.324,5.537037,within-1-month,under-30,London,2,7,6,57.8125,Birmingham
+505,6,64,view,1730355323418,6,'Wolverhampton, UK',7.192,5.537037,within-1-month,under-30,London,7,6,2,57.8125,Birmingham
+506,6,63,view,1730355332351,5,'Southampton, UK',7.449,5.537037,within-1-month,under-30,London,2,7,6,57.8125,Birmingham
+507,6,63,purchase,1730355333180,5,'Southampton, UK',8.113403,5.537037,within-1-month,under-30,London,7,6,2,88,Birmingham
+508,6,38.512136,view_friend_profile,1730355339658,6.978155,'Birmingham, UK',8.113403,10,within-1-month,under-30,London,2,7,6,57.8125,Birmingham
+509,6,38.512136,view_friend_profile,1730355344693,6.978155,'Birmingham, UK',8.113403,7,within-1-month,under-30,London,2,6,7,57.8125,Birmingham
+510,6,38.512136,view_friend_profile,1730355349160,6.978155,'Birmingham, UK',8.113403,1,within-1-month,under-30,London,6,7,2,57.8125,Birmingham
+511,6,38.512136,view_friend_profile,1730355353303,6.978155,'Birmingham, UK',8.113403,3,within-1-month,under-30,London,2,7,6,57.8125,Birmingham
+512,4,38.512136,browse,1730355455451,6.978155,'Birmingham, UK',4.987,5.537037,within-2-weeks,over-100,London,6,1,14,57.8125,'Liverpool, UK'
+513,4,46,view,1730355466271,14,'Derby, UK',8.254,5.537037,within-1-month,under-30,London,1,6,14,57.8125,'Liverpool, UK'
+514,4,38.512136,browse,1730355479864,6.978155,'Birmingham, UK',8.712,5.537037,within-1-month,between-30-and-100,London,1,6,14,57.8125,'Liverpool, UK'
+515,4,70,view,1730355495788,8,'Norwich, UK',12.4,5.537037,within-1-month,under-30,London,1,14,6,57.8125,'Liverpool, UK'
+516,4,70,purchase,1730355497864,8,'Norwich, UK',8.113403,5.537037,within-1-month,under-30,London,14,6,1,89,'Liverpool, UK'
+517,4,70,view,1730355500778,8,'Norwich, UK',0.44,5.537037,within-1-month,under-30,London,14,1,6,57.8125,'Liverpool, UK'
+518,4,49,view,1730355506144,8,'Coventry, UK',3.617,5.537037,within-1-month,under-30,London,1,6,14,57.8125,'Liverpool, UK'
+519,4,49,add_to_wishlist,1730355507677,8,'Coventry, UK',8.113403,5.537037,within-1-month,under-30,London,14,6,1,57.8125,'Liverpool, UK'
+520,4,63,view,1730355537608,5,'Southampton, UK',18.333,5.537037,within-1-month,under-30,London,14,6,1,57.8125,'Liverpool, UK'
+521,4,63,purchase,1730355538412,5,'Southampton, UK',8.113403,5.537037,within-1-month,under-30,London,6,14,1,90,'Liverpool, UK'
+522,4,63,view,1730355542369,5,'Southampton, UK',0.135,5.537037,within-1-month,under-30,London,1,6,14,57.8125,'Liverpool, UK'
+523,4,62,view,1730355643962,5,'Bristol, UK',5.758,5.537037,within-1-month,under-30,London,14,6,1,57.8125,'Liverpool, UK'
+524,4,66,view,1730355653041,6,'Birmingham, UK',7.11,5.537037,within-1-month,under-30,London,1,14,6,57.8125,'Liverpool, UK'
+525,4,71,view,1730355659722,8,'London, UK',2.881,5.537037,within-1-month,under-30,London,1,6,14,57.8125,'Liverpool, UK'
+526,4,38.512136,browse,1730355670063,6.978155,'Birmingham, UK',6.784,5.537037,within-1-month,between-30-and-100,London,1,6,14,57.8125,'Liverpool, UK'
+527,4,43,view,1730355687589,13,'Northampton, UK',6.06,5.537037,within-1-month,under-30,London,1,6,14,57.8125,'Liverpool, UK'
+528,4,45,view,1730355706455,14,'Birmingham, UK',16.788,5.537037,within-1-month,under-30,London,6,1,14,57.8125,'Liverpool, UK'
+529,4,45,purchase,1730355707175,14,'Birmingham, UK',8.113403,5.537037,within-1-month,under-30,London,14,6,1,91,'Liverpool, UK'
+530,4,45,view,1730355711385,14,'Birmingham, UK',1.613,5.537037,within-1-month,under-30,London,1,14,6,57.8125,'Liverpool, UK'
+531,4,44,view,1730355721724,13,'Newcastle, UK',7.729,5.537037,within-1-month,under-30,London,1,6,14,57.8125,'Liverpool, UK'
+532,4,48,view,1730355732928,15,'Birmingham, UK',6.09,5.537037,within-1-month,under-30,London,1,14,6,57.8125,'Liverpool, UK'
+533,4,50,view,1730355757554,1,'Coventry, UK',22.168,5.537037,within-1-month,under-30,London,14,1,6,57.8125,'Liverpool, UK'
+534,4,50,purchase,1730355758399,1,'Coventry, UK',8.113403,5.537037,within-1-month,under-30,London,14,6,1,92,'Liverpool, UK'
+535,4,38.512136,view_friend_profile,1730355762089,6.978155,'Birmingham, UK',8.113403,7,within-1-month,under-30,London,1,6,14,57.8125,'Liverpool, UK'
+536,5,38.512136,browse,1730355897007,6.978155,'Birmingham, UK',4.113,5.537037,this-week,under-30,London,4,3,5,57.8125,'Coventry, UK'
+537,5,38.512136,browse,1730355900341,6.978155,'Birmingham, UK',3.283,5.537037,this-week,free,London,4,5,3,57.8125,'Coventry, UK'
+538,5,38.512136,browse,1730355905750,6.978155,'Birmingham, UK',3.3,5.537037,within-1-month,over-100,London,3,4,5,57.8125,'Coventry, UK'
+539,5,69,view,1730355917381,7,'Manchester, UK',10.099,5.537037,within-1-month,under-30,London,5,4,3,57.8125,'Coventry, UK'
+540,5,38.512136,browse,1730355921397,6.978155,'Birmingham, UK',3.931,5.537037,within-1-month,between-30-and-100,London,4,3,5,57.8125,'Coventry, UK'
+541,5,40,view,1730355939103,11,'Liverpool, UK',5.267,5.537037,within-1-month,under-30,London,4,5,3,57.8125,'Coventry, UK'
+542,5,39,view,1730355943038,11,'Edinburgh, UK',2.222,5.537037,within-1-month,under-30,London,4,3,5,57.8125,'Coventry, UK'
+543,5,51,view,1730355973583,1,'Birmingham, UK',24.636,5.537037,within-1-month,under-30,London,5,4,3,57.8125,'Coventry, UK'
+544,5,53,view,1730355994326,2,'Birmingham, UK',16.464,5.537037,within-1-month,under-30,London,4,3,5,57.8125,'Coventry, UK'
+545,5,53,purchase,1730355995235,2,'Birmingham, UK',8.113403,5.537037,within-1-month,under-30,London,3,5,4,93,'Coventry, UK'
+546,5,53,view,1730356000148,2,'Birmingham, UK',1.731,5.537037,within-1-month,under-30,London,3,4,5,57.8125,'Coventry, UK'
+547,5,55,view,1730356010780,2,'London, UK',9.115,5.537037,within-1-month,under-30,London,4,3,5,57.8125,'Coventry, UK'
+548,5,54,view,1730356028764,2,'Manchester, UK',12.565,5.537037,within-1-month,under-30,London,5,3,4,57.8125,'Coventry, UK'
+549,5,57,view,1730356047730,3,'Leicester, Uk',10.149,5.537037,within-1-month,under-30,London,3,4,5,57.8125,'Coventry, UK'
+550,5,63,view,1730356065898,5,'Southampton, UK',12.632,5.537037,within-1-month,under-30,London,4,5,3,57.8125,'Coventry, UK'
+551,5,70,view,1730356085701,8,'Norwich, UK',12.799,5.537037,within-1-month,under-30,London,3,4,5,57.8125,'Coventry, UK'
+552,5,70,purchase,1730356086430,8,'Norwich, UK',8.113403,5.537037,within-1-month,under-30,London,5,3,4,94,'Coventry, UK'
+553,5,70,view,1730356091866,8,'Norwich, UK',0.552,5.537037,within-1-month,under-30,London,5,3,4,57.8125,'Coventry, UK'
+554,5,75,view,1730356103668,10,'Coventry, UK',8.04,5.537037,within-1-month,under-30,London,5,4,3,57.8125,'Coventry, UK'
+555,5,78,view,1730356113058,11,'Liverpool, UK',4.815,5.537037,within-1-month,under-30,London,5,4,3,57.8125,'Coventry, UK'
+556,5,81,view,1730356141662,14,'Leicester, Uk',26.665,5.537037,within-1-month,under-30,London,4,3,5,57.8125,'Coventry, UK'
+557,5,81,add_to_wishlist,1730356144919,14,'Leicester, Uk',8.113403,5.537037,within-1-month,under-30,London,5,4,3,57.8125,'Coventry, UK'
+558,5,38.512136,view_friend_profile,1730356150346,6.978155,'Birmingham, UK',8.113403,8,within-1-month,under-30,London,3,5,4,57.8125,'Coventry, UK'
+559,8,38.512136,view_friend_profile,1730356165316,6.978155,'Birmingham, UK',8.113403,11,within-1-month,under-30,London,1,6,2,57.8125,'Birmingham, UK'
+560,11,38.512136,browse,1730356252941,6.978155,'Birmingham, UK',4.531,5.537037,within-2-weeks,under-30,London,10,3,14,57.8125,'Coventry, UK'
+561,11,42,view,1730356262688,12,'Leicester, UK',8.087,5.537037,within-1-month,under-30,London,14,10,3,57.8125,'Coventry, UK'
+562,11,38.512136,browse,1730356265717,6.978155,'Birmingham, UK',2.979,5.537037,within-2-weeks,under-30,London,14,10,3,57.8125,'Coventry, UK'
+563,11,38.512136,browse,1730356272283,6.978155,'Birmingham, UK',6.49,5.537037,within-2-weeks,under-30,London,14,10,3,57.8125,'Coventry, UK'
+564,11,38.512136,browse,1730356275639,6.978155,'Birmingham, UK',3.296,5.537037,within-1-month,under-30,London,3,10,14,57.8125,'Coventry, UK'
+565,11,19,view,1730356286019,13,'Birmingham, UK',7.408,5.537037,within-1-month,under-30,London,10,3,14,57.8125,'Coventry, UK'
+566,11,38.512136,browse,1730356290416,6.978155,'Birmingham, UK',4.339,5.537037,within-1-month,under-30,London,3,10,14,57.8125,'Coventry, UK'
+567,11,85,view,1730356299680,15,'Bradford, UK',6.648,5.537037,within-1-month,under-30,London,3,14,10,57.8125,'Coventry, UK'
+568,11,85,purchase,1730356300420,15,'Bradford, UK',8.113403,5.537037,within-1-month,under-30,London,14,3,10,95,'Coventry, UK'
+569,11,38.512136,view_friend_profile,1730356315878,6.978155,'Birmingham, UK',8.113403,10,within-1-month,under-30,London,10,14,3,57.8125,'Coventry, UK'
+570,10,38.512136,browse,1730356339279,6.978155,'Birmingham, UK',8.597,5.537037,within-1-month,under-30,London,14,2,5,57.8125,'Warwick, UK'
+571,10,38.512136,browse,1730356349077,6.978155,'Birmingham, UK',9.726,5.537037,within-1-month,under-30,London,2,5,14,57.8125,'Warwick, UK'
+572,10,63,view,1730356381393,5,'Southampton, UK',27.711,5.537037,within-1-month,under-30,London,14,2,5,57.8125,'Warwick, UK'
+573,10,81,view,1730356405111,14,'Leicester, Uk',13.045,5.537037,within-1-month,under-30,London,14,5,2,57.8125,'Warwick, UK'
+574,10,78,view,1730356414081,11,'Liverpool, UK',6.302,5.537037,within-1-month,under-30,London,14,2,5,57.8125,'Warwick, UK'
+575,10,82,view,1730356425466,14,'Birmingham, UK',6.434,5.537037,within-1-month,under-30,London,14,2,5,57.8125,'Warwick, UK'
+576,10,82,purchase,1730356426380,14,'Birmingham, UK',8.113403,5.537037,within-1-month,under-30,London,2,5,14,96,'Warwick, UK'
+577,10,82,view,1730356431041,14,'Birmingham, UK',1.631,5.537037,within-1-month,under-30,London,2,14,5,57.8125,'Warwick, UK'
+578,10,86,view,1730356441107,15,'London, UK',7.645,5.537037,within-1-month,under-30,London,5,2,14,57.8125,'Warwick, UK'
+579,10,86,purchase,1730356441832,15,'London, UK',8.113403,5.537037,within-1-month,under-30,London,5,14,2,97,'Warwick, UK'
+580,10,38.512136,browse,1730356464476,6.978155,'Birmingham, UK',7.748,5.537037,this-month,under-30,London,5,14,2,57.8125,'Warwick, UK'
+581,10,38.512136,browse,1730356467573,6.978155,'Birmingham, UK',3.042,5.537037,this-month,over-100,London,14,5,2,57.8125,'Warwick, UK'
+582,10,38.512136,browse,1730356471858,6.978155,'Birmingham, UK',4.242,5.537037,within-1-month,over-100,London,2,5,14,57.8125,'Warwick, UK'
+583,10,38.512136,browse,1730356481021,6.978155,'Birmingham, UK',9.066,5.537037,within-1-month,over-100,'Newcastle, UK',2,14,5,57.8125,'Warwick, UK'
+584,10,26,view,1730356487211,5,'Newcastle, UK',4.723,5.537037,within-1-month,under-30,London,14,5,2,57.8125,'Warwick, UK'
+585,10,38.512136,browse,1730356490408,6.978155,'Birmingham, UK',3.151,5.537037,within-1-month,over-100,b,2,5,14,57.8125,'Warwick, UK'
+586,10,41,view,1730356499125,12,'Birmingham, UK',4.582,5.537037,within-1-month,under-30,London,5,2,14,57.8125,'Warwick, UK'
+587,10,73,view,1730356518492,9,'Bradford, UK',7.162,5.537037,within-1-month,under-30,London,14,2,5,57.8125,'Warwick, UK'
+588,10,75,view,1730356527291,10,'Coventry, UK',5.614,5.537037,within-1-month,under-30,London,5,14,2,57.8125,'Warwick, UK'
+589,10,76,view,1730356534580,10,'Manchester, UK',4.783,5.537037,within-1-month,under-30,London,2,5,14,57.8125,'Warwick, UK'
+590,10,81,view,1730356543562,14,'Leicester, Uk',3.766,5.537037,within-1-month,under-30,London,5,14,2,57.8125,'Warwick, UK'
+591,9,33,view,1730356644238,8,'Warwick, UK',3.292,5.537037,within-1-month,under-30,London,2,7,1,57.8125,'London, UK'
+592,9,15,view,1730356658176,2,'Northampton, UK',5.915,5.537037,within-1-month,under-30,London,1,7,2,57.8125,'London, UK'
+593,9,26,view,1730356671071,5,'Newcastle, UK',5.06,5.537037,within-1-month,under-30,London,1,7,2,57.8125,'London, UK'
+594,9,39,view,1730356686952,11,'Edinburgh, UK',3.51,5.537037,within-1-month,under-30,London,7,1,2,57.8125,'London, UK'
+595,9,46,view,1730356699195,14,'Derby, UK',8.736,5.537037,within-1-month,under-30,London,1,2,7,57.8125,'London, UK'
+596,9,51,add_to_wishlist,1730356704227,1,'Birmingham, UK',8.113403,5.537037,within-1-month,under-30,London,7,1,2,57.8125,'London, UK'
+597,9,53,view,1730356741216,2,'Birmingham, UK',22.821,5.537037,within-1-month,under-30,London,2,7,1,57.8125,'London, UK'
+598,3,53,view,1730356743334,2,'Birmingham, UK',4.75,5.537037,within-1-month,under-30,London,7,4,6,57.8125,'Coventry, UK'
+599,3,56,view,1730356747915,3,'Warwick, UK',2.027,5.537037,within-1-month,under-30,London,4,6,7,57.8125,'Coventry, UK'
+600,3,55,view,1730356750722,2,'London, UK',1.661,5.537037,within-1-month,under-30,London,7,6,4,57.8125,'Coventry, UK'
+601,3,52,view,1730356767692,1,'London, UK',2.215,5.537037,within-1-month,under-30,London,6,7,4,57.8125,'Coventry, UK'
+602,9,52,view,1730356776920,1,'London, UK',22.745,5.537037,within-1-month,under-30,London,1,7,2,57.8125,'London, UK'
+603,9,63,view,1730356783982,5,'Southampton, UK',1.515,5.537037,within-1-month,under-30,London,7,2,1,57.8125,'London, UK'
+604,9,67,view,1730356792646,7,'Birmingham, UK',4.008,5.537037,within-1-month,under-30,London,2,1,7,57.8125,'London, UK'
+605,9,67,add_to_wishlist,1730356796636,7,'Birmingham, UK',8.113403,5.537037,within-1-month,under-30,London,2,1,7,57.8125,'London, UK'
+606,9,38.512136,browse,1730356822900,6.978155,'Birmingham, UK',3.868,5.537037,within-2-weeks,under-30,London,2,7,1,57.8125,'London, UK'
+607,9,38.512136,browse,1730356827839,6.978155,'Birmingham, UK',4.818,5.537037,within-2-weeks,under-30,London,2,7,1,57.8125,'London, UK'
+608,9,38.512136,browse,1730356832814,6.978155,'Birmingham, UK',4.863,5.537037,within-1-month,under-30,London,2,7,1,57.8125,'London, UK'
+609,9,78,view,1730356840493,11,'Liverpool, UK',5.226,5.537037,within-1-month,under-30,London,2,1,7,57.8125,'London, UK'
+610,3,63,view,1730356845275,5,'Southampton, UK',72.099,5.537037,within-1-month,under-30,London,6,4,7,57.8125,'Coventry, UK'
+611,3,38.512136,view_friend_profile,1730356955605,6.978155,'Birmingham, UK',8.113403,8,within-1-month,under-30,London,4,6,7,57.8125,'Coventry, UK'
+612,10,38.512136,browse,1730356976506,6.978155,'Birmingham, UK',3.709,5.537037,within-1-month,over-100,London,14,2,5,57.8125,'Warwick, UK'
+613,10,53,view,1730357005213,2,'Birmingham, UK',15.643,5.537037,within-1-month,under-30,London,5,14,2,57.8125,'Warwick, UK'
+614,10,54,view,1730357032023,2,'Manchester, UK',5.107,5.537037,within-1-month,under-30,London,5,2,14,57.8125,'Warwick, UK'
+615,10,38.512136,browse,1730357048697,6.978155,'Birmingham, UK',7.638,5.537037,within-1-month,over-100,london,2,14,5,57.8125,'Warwick, UK'
+616,10,77,view,1730357063460,11,'London, UK',11.923,5.537037,within-1-month,under-30,London,5,14,2,57.8125,'Warwick, UK'
+617,10,64,view,1730357084658,6,'Wolverhampton, UK',3.757,5.537037,within-1-month,under-30,London,14,5,2,57.8125,'Warwick, UK'
+618,10,72,view,1730357094658,8,'Manchester, UK',3.158,5.537037,within-1-month,under-30,London,2,14,5,57.8125,'Warwick, UK'
+619,10,73,view,1730357101199,9,'Bradford, UK',5.17,5.537037,within-1-month,under-30,London,2,14,5,57.8125,'Warwick, UK'
+620,10,76,view,1730357110349,10,'Manchester, UK',7.13,5.537037,within-1-month,under-30,London,14,5,2,57.8125,'Warwick, UK'
+621,10,81,view,1730357119654,14,'Leicester, Uk',4.993,5.537037,within-1-month,under-30,London,14,5,2,57.8125,'Warwick, UK'
+622,10,81,add_to_wishlist,1730357122437,14,'Leicester, Uk',8.113403,5.537037,within-1-month,under-30,London,5,2,14,57.8125,'Warwick, UK'
+623,1,38.512136,browse,1730357143050,6.978155,'Birmingham, UK',3.588,5.537037,within-1-month,under-30,London,6,7,1,57.8125,'London, UK'
+624,1,63,view,1730357153646,5,'Southampton, UK',7.4,5.537037,within-1-month,under-30,London,6,7,1,57.8125,'London, UK'
+625,1,38.512136,browse,1730357171246,6.978155,'Birmingham, UK',3.022,5.537037,within-1-month,under-30,London,1,7,6,57.8125,'London, UK'
+626,1,49,view,1730357180547,8,'Coventry, UK',7.295,5.537037,within-1-month,under-30,London,7,1,6,57.8125,'London, UK'
+627,1,82,view,1730357226849,14,'Birmingham, UK',9.56,5.537037,within-1-month,under-30,London,1,6,7,57.8125,'London, UK'
+628,1,86,view,1730357234351,15,'London, UK',5.546,5.537037,within-1-month,under-30,London,7,1,6,57.8125,'London, UK'
+629,1,85,view,1730357274654,15,'Bradford, UK',38.642,5.537037,within-1-month,under-30,London,7,1,6,57.8125,'London, UK'
+630,1,83,view,1730357283947,14,'Wolverhampton, UK',5.195,5.537037,within-1-month,under-30,London,1,7,6,57.8125,'London, UK'
+631,1,38.512136,browse,1730357289568,6.978155,'Birmingham, UK',3.722,5.537037,within-1-month,under-30,London,6,1,7,57.8125,'London, UK'
+632,1,23,view,1730357294203,9,'Warwick, UK',2.581,5.537037,within-1-month,under-30,London,6,7,1,57.8125,'London, UK'
+633,1,26,view,1730357310954,5,'Newcastle, UK',4.722,5.537037,within-1-month,under-30,London,6,1,7,57.8125,'London, UK'
+634,1,31,view,1730357317428,3,'Coventry, UK',1.838,5.537037,within-1-month,under-30,London,7,6,1,57.8125,'London, UK'
+635,1,51,view,1730357339772,1,'Birmingham, UK',11.08,5.537037,within-1-month,under-30,London,1,6,7,57.8125,'London, UK'
+636,1,53,view,1730357347686,2,'Birmingham, UK',4.85,5.537037,within-1-month,under-30,London,1,6,7,57.8125,'London, UK'
+637,1,53,view,1730357353645,2,'Birmingham, UK',4.178,5.537037,within-1-month,under-30,London,6,1,7,57.8125,'London, UK'
+638,1,55,view,1730357382136,2,'London, UK',25.731,5.537037,within-1-month,under-30,London,6,7,1,57.8125,'London, UK'
+639,1,38.512136,browse,1730357392721,6.978155,'Birmingham, UK',8.172,5.537037,within-1-month,under-30,London,6,7,1,57.8125,'London, UK'
+640,1,68,view,1730357398028,7,'Leeds, Uk',2.936,5.537037,within-1-month,under-30,London,7,1,6,57.8125,'London, UK'
+641,1,67,view,1730357401453,7,'Birmingham, UK',1.556,5.537037,within-1-month,under-30,London,6,1,7,57.8125,'London, UK'
+642,1,38.512136,browse,1730357405479,6.978155,'Birmingham, UK',3.957,5.537037,within-1-month,under-30,London,7,6,1,57.8125,'London, UK'
+643,1,38.512136,browse,1730357412099,6.978155,'Birmingham, UK',3.355,5.537037,within-1-month,under-30,London,7,6,1,57.8125,'London, UK'
+644,1,38.512136,browse,1730357416721,6.978155,'Birmingham, UK',4.547,5.537037,within-1-month,under-30,London,1,7,6,57.8125,'London, UK'
+645,1,38.512136,browse,1730357422273,6.978155,'Birmingham, UK',5.48,5.537037,within-1-month,under-30,London,1,7,6,57.8125,'London, UK'
+646,1,38.512136,browse,1730357428102,6.978155,'Birmingham, UK',5.749,5.537037,within-1-month,under-30,London,6,7,1,57.8125,'London, UK'
+647,1,45,view,1730357433731,14,'Birmingham, UK',2.418,5.537037,within-1-month,under-30,London,7,6,1,57.8125,'London, UK'
+648,1,38.512136,browse,1730357436622,6.978155,'Birmingham, UK',2.817,5.537037,within-1-month,under-30,London,6,1,7,57.8125,'London, UK'
+649,1,81,view,1730357446801,14,'Leicester, Uk',6.893,5.537037,within-1-month,under-30,London,1,6,7,57.8125,'London, UK'
+650,7,7,view,1730357475738,1,'London, UK',2.316,5.537037,within-1-month,under-30,London,1,4,7,57.8125,Manchester
+651,7,38.512136,browse,1730357480833,6.978155,'Birmingham, UK',5.043,5.537037,this-month,under-30,London,4,7,1,57.8125,Manchester
+652,7,38.512136,browse,1730357510736,6.978155,'Birmingham, UK',27.509,5.537037,within-1-month,between-30-and-100,London,1,4,7,57.8125,Manchester
+653,7,83,view,1730357529695,14,'Wolverhampton, UK',8.345,5.537037,within-1-month,under-30,London,4,1,7,57.8125,Manchester
+654,7,82,view,1730357543214,14,'Birmingham, UK',9.999,5.537037,within-1-month,under-30,London,4,7,1,57.8125,Manchester
+655,7,85,view,1730357551976,15,'Bradford, UK',6.542,5.537037,within-1-month,under-30,London,1,4,7,57.8125,Manchester
+656,7,67,view,1730357574962,7,'Birmingham, UK',10.109,5.537037,within-1-month,under-30,London,7,1,4,57.8125,Manchester
+657,7,63,view,1730357588140,5,'Southampton, UK',7.917,5.537037,within-1-month,under-30,London,4,7,1,57.8125,Manchester
+658,7,38.512136,browse,1730357620736,6.978155,'Birmingham, UK',9.24,5.537037,within-1-month,under-30,London,1,7,4,57.8125,Manchester
+659,7,49,view,1730357638412,8,'Coventry, UK',5.531,5.537037,within-1-month,under-30,London,1,4,7,57.8125,Manchester
+660,7,51,view,1730357647130,1,'Birmingham, UK',7.329,5.537037,within-1-month,under-30,London,7,4,1,57.8125,Manchester
+661,7,50,view,1730357658910,1,'Coventry, UK',10.311,5.537037,within-1-month,under-30,London,1,4,7,57.8125,Manchester
+662,7,53,view,1730357666798,2,'Birmingham, UK',4.675,5.537037,within-1-month,under-30,London,1,7,4,57.8125,Manchester
+663,7,54,view,1730357672852,2,'Manchester, UK',2.878,5.537037,within-1-month,under-30,London,1,7,4,57.8125,Manchester
+664,7,59,view,1730357692179,4,'Leeds, Uk',13.813,5.537037,within-1-month,under-30,London,7,4,1,57.8125,Manchester
+665,7,66,view,1730357701451,6,'Birmingham, UK',2.876,5.537037,within-1-month,under-30,London,4,1,7,57.8125,Manchester
+666,7,81,view,1730357712995,14,'Leicester, Uk',2.091,5.537037,within-1-month,under-30,London,7,1,4,57.8125,Manchester
+667,7,85,view,1730357718174,15,'Bradford, UK',2.248,5.537037,within-1-month,under-30,London,7,1,4,57.8125,Manchester
+668,7,83,view,1730357725508,14,'Wolverhampton, UK',2.093,5.537037,within-1-month,under-30,London,1,7,4,57.8125,Manchester
+669,7,38.512136,browse,1730357732237,6.978155,'Birmingham, UK',5.855,5.537037,within-1-month,under-30,London,1,7,4,57.8125,Manchester
+670,7,38.512136,view_friend_profile,1730357746767,6.978155,'Birmingham, UK',8.113403,4,within-1-month,under-30,London,1,4,7,57.8125,Manchester
+671,7,38.512136,view_friend_profile,1730357749964,6.978155,'Birmingham, UK',8.113403,6,within-1-month,under-30,London,7,1,4,57.8125,Manchester
+672,4,38.512136,browse,1730357824294,6.978155,'Birmingham, UK',5.052,5.537037,within-1-month,under-30,London,6,14,1,57.8125,'Liverpool, UK'
+673,4,45,view,1730357837325,14,'Birmingham, UK',9.772,5.537037,within-1-month,under-30,London,14,6,1,57.8125,'Liverpool, UK'
+674,4,38.512136,browse,1730357844367,6.978155,'Birmingham, UK',3.814,5.537037,within-1-month,under-30,London,1,6,14,57.8125,'Liverpool, UK'
+675,4,36,view,1730357863670,9,'Leicester, UK',2.96,5.537037,within-1-month,under-30,London,1,6,14,57.8125,'Liverpool, UK'
+676,4,34,view,1730357869619,8,'Bristol, UK',3.641,5.537037,within-1-month,under-30,London,1,14,6,57.8125,'Liverpool, UK'
+677,4,52,view,1730357895439,1,'London, UK',5.762,5.537037,within-1-month,under-30,London,6,1,14,57.8125,'Liverpool, UK'
+678,4,55,view,1730357913480,2,'London, UK',14.665,5.537037,within-1-month,under-30,London,1,6,14,57.8125,'Liverpool, UK'
+679,4,56,view,1730357917932,3,'Warwick, UK',1.494,5.537037,within-1-month,under-30,London,1,6,14,57.8125,'Liverpool, UK'
+680,4,63,view,1730357926114,5,'Southampton, UK',1.779,5.537037,within-1-month,under-30,London,6,1,14,57.8125,'Liverpool, UK'
+681,4,69,view,1730357940635,7,'Manchester, UK',7.119,5.537037,within-1-month,under-30,London,1,6,14,57.8125,'Liverpool, UK'
+682,4,67,view,1730357945949,7,'Birmingham, UK',3.356,5.537037,within-1-month,under-30,London,6,1,14,57.8125,'Liverpool, UK'
+683,4,81,view,1730357955205,14,'Leicester, Uk',2.496,5.537037,within-1-month,under-30,London,14,1,6,57.8125,'Liverpool, UK'
+684,4,81,add_to_wishlist,1730357956413,14,'Leicester, Uk',8.113403,5.537037,within-1-month,under-30,London,1,6,14,57.8125,'Liverpool, UK'
+685,1,50,add_to_wishlist,1730357991121,1,'Coventry, UK',8.113403,5.537037,within-1-month,under-30,London,1,6,7,57.8125,'London, UK'
+686,1,27,view,1730358017488,6,'Birmingham, UK',1.923,5.537037,within-1-month,under-30,London,1,6,7,57.8125,'London, UK'
+687,5,38.512136,browse,1730358042799,6.978155,'Birmingham, UK',3.153,5.537037,within-2-weeks,under-30,London,3,5,4,57.8125,'Coventry, UK'
+688,5,38.512136,browse,1730358045657,6.978155,'Birmingham, UK',2.764,5.537037,within-2-weeks,under-30,London,5,4,3,57.8125,'Coventry, UK'
+689,5,38.512136,browse,1730358057987,6.978155,'Birmingham, UK',12.276,5.537037,within-1-month,under-30,manch,3,5,4,57.8125,'Coventry, UK'
+690,5,54,view,1730358070085,2,'Manchester, UK',9.225,5.537037,within-1-month,under-30,London,4,5,3,57.8125,'Coventry, UK'
+691,5,54,purchase,1730358070871,2,'Manchester, UK',8.113403,5.537037,within-1-month,under-30,London,4,5,3,98,'Coventry, UK'
+692,5,38.512136,browse,1730358086780,6.978155,'Birmingham, UK',5.107,5.537037,within-1-month,over-100,London,4,5,3,57.8125,'Coventry, UK'
+693,5,78,view,1730358092021,11,'Liverpool, UK',2.892,5.537037,within-1-month,under-30,London,5,4,3,57.8125,'Coventry, UK'
+694,5,77,view,1730358094663,11,'London, UK',1.499,5.537037,within-1-month,under-30,London,5,4,3,57.8125,'Coventry, UK'
+695,5,38.512136,browse,1730358097392,6.978155,'Birmingham, UK',2.661,5.537037,within-1-month,over-100,London,3,4,5,57.8125,'Coventry, UK'
+696,5,50,view,1730358109842,1,'Coventry, UK',9.434,5.537037,within-1-month,under-30,London,4,3,5,57.8125,'Coventry, UK'
+697,6,67,view,1730358143538,7,'Birmingham, UK',3.152,5.537037,within-1-month,under-30,London,7,2,6,57.8125,Birmingham
+698,6,63,add_to_wishlist,1730358161979,5,'Southampton, UK',8.113403,5.537037,within-1-month,under-30,London,2,6,7,57.8125,Birmingham
+699,6,50,view,1730358198068,1,'Coventry, UK',10.335,5.537037,within-1-month,under-30,London,7,2,6,57.8125,Birmingham
+700,6,52,view,1730358208532,1,'London, UK',7.803,5.537037,within-1-month,under-30,London,2,6,7,57.8125,Birmingham
+701,6,53,view,1730358216044,2,'Birmingham, UK',6.276,5.537037,within-1-month,under-30,London,7,2,6,57.8125,Birmingham
