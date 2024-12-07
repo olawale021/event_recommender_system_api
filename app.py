@@ -1,20 +1,35 @@
+import numpy as np
 from flask import Flask, jsonify, request
 import pickle
 import pandas as pd
 import logging
 import os
 from scipy.io import arff
+import tensorflow as tf
 
 app = Flask(__name__)
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
-# Load the hybrid model from the file
-with open('hybrid_recommendation_model.pkl', 'rb') as file:
-    hybrid_model = pickle.load(file)
+# Load the hybrid model's dynamic weights
+weights_file = 'saved_models/hybrid_weights.pkl'
+with open(weights_file, 'rb') as file:
+    weights = pickle.load(file)
 
-svd_model = hybrid_model['svd_model']
-knn_model = hybrid_model['knn_model']
+logger.debug(f"Loaded hybrid weights: {weights}")
+
+# Load the individual models from their respective files
+with open('saved_models/svd_model.pkl', 'rb') as file:
+    svd_model = pickle.load(file)
+
+with open('saved_models/knn_model.pkl', 'rb') as file:
+    knn_model = pickle.load(file)
+
+# Load Keras models (NCF and MLP)
+ncf_model = tf.keras.models.load_model('saved_models/ncf_model.h5',
+                                       custom_objects={'mean_squared_error': 'mean_squared_error'})
+mlp_model = tf.keras.models.load_model('saved_models/mlp_model.h5',
+                                       custom_objects={'mean_squared_error': 'mean_squared_error'})
 
 
 # Load and check datasets
@@ -28,12 +43,12 @@ def load_data(filename, file_type='csv'):
 
 
 # Load datasets
-user_behavior = load_data('cleaned_user_behaviour_new.arff', file_type='arff')
-events = load_data('events.csv')
-preferred_categories = load_data('user_preferred_categories.csv')
-tickets = load_data('tickets.csv')
-users = load_data('users.csv')
-friends = load_data('friends.csv')
+user_behavior = load_data('datasets/cleaned_user_behaviour_new.arff', file_type='arff')
+events = load_data('datasets/events.csv')
+preferred_categories = load_data('datasets/user_preferred_categories.csv')
+tickets = load_data('datasets/tickets.csv')
+users = load_data('datasets/users.csv')
+friends = load_data('datasets/friends.csv')
 
 # Decode object columns in user_behavior if loaded from arff
 for col in user_behavior.select_dtypes([object]):
@@ -41,16 +56,15 @@ for col in user_behavior.select_dtypes([object]):
 
 # Map interaction values
 interaction_values = {
-    b'browse': 2,
-    b'view': 3,
-    b'purchase': 7,
-    b'add_to_wishlist': 5,
+    b'browse': 3.0,
+    b'view': 4.0,
+    b'purchase': 5.0,
+    b'add_to_wishlist': 4.5,
     b'remove_from_wishlist': 0,
-    b'view_friend_profile': 3
+    b'view_friend_profile': 3.5
 }
 # Add other interactions if relevant for recommendations
 relevant_interactions = {'purchase', 'add_to_wishlist'}
-
 
 user_behavior['interaction_value'] = user_behavior['interaction_type'].map(interaction_values)
 
@@ -82,22 +96,44 @@ def get_hybrid_recommendations(user_id, events, user_behavior, preferred_categor
     user_prefs = preferred_categories[preferred_categories['user_id'] == user_id]
     user_top_categories = set(user_prefs['category_id'].unique())
 
-    preferred_category_boost = 0.1
+    preferred_category_boost = 0.5
     predictions = []
+
+    # Ensure that there are weights available (and that they match the number of models)
+    if len(weights) != 4:
+        logger.error("Hybrid model weights are not correctly loaded. Exiting recommendation generation.")
+        return pd.DataFrame()
+
     for event_id in events['event_id'].unique():
         if event_id in purchased_events:
             continue
         try:
+            # Get the predictions from each model
             svd_pred = svd_model.predict(user_id, event_id).est
             knn_pred = knn_model.predict(user_id, event_id).est
-            hybrid_score = 0.6 * svd_pred + 0.4 * knn_pred
+
+            # If you want to include NCF and MLP predictions as well, add them:
+            ncf_pred = ncf_model.predict([np.array([user_id]), np.array([event_id])])[0][0]
+            mlp_pred = mlp_model.predict([np.array([user_id]), np.array([event_id])])[0][0]
+
+            # Calculate the hybrid score based on the saved weights
+            hybrid_score = (weights[0] * svd_pred +
+                            weights[1] * knn_pred +
+                            weights[2] * ncf_pred +
+                            weights[3] * mlp_pred)
+
             event_category_id = events[events['event_id'] == event_id]['category_id'].values[0]
             if event_category_id in user_top_categories:
                 hybrid_score += preferred_category_boost
+                # Clip the hybrid score to not exceed 1
+                hybrid_score = np.clip(hybrid_score, 0, 1.0)
+
             predictions.append({'event_id': event_id, 'hybrid_score': hybrid_score})
-        except Exception:
+        except Exception as e:
+            logger.warning(f"Error processing event {event_id} for user {user_id}: {e}")
             continue
 
+    # Get the top n recommendations based on hybrid scores
     recommendations = pd.DataFrame(predictions).nlargest(n_recommendations, 'hybrid_score')
 
     # Merge with events data to include event details
@@ -119,7 +155,7 @@ def get_popular_events_anonymous(n=10):
             .assign(
                 popularity_score=lambda df: (
                     df['interaction_value'] * 0.7 +  # Weight for interaction values
-                    df['user_id'] * 0.3             # Weight for number of users
+                    df['user_id'] * 0.3            # Weight for number of users
                 )
             )
             .sort_values('popularity_score', ascending=False)
